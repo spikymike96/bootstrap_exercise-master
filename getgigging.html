@@ -40,53 +40,21 @@
         <br>
         <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)">Leeds
     </form>
-    <p>Date:
-        <input type="text" id="datepicker">
-    </p>
-    <label for="from">From</label>
-    <input type="text" id="from" name="from">
-    <label for="to">to</label>
-    <input type="text" id="to" name="to">
+    <form action="startdatepicker">
+        From:
+        <input type="date" name="from">
+    </form>
+    <form action="startdatepicker">
+        Until:
+        <input type="date" name="until">
+    </form>
     <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
     <!-- SCRIPTS
  -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="bootstrap/bootstrap.js ">
     </script>
-    <script src=" main.js ">
-    </script>
-    <script>
-    $(function() {
-        var dateFormat = "mm/dd/yy",
-            from = $("#from")
-            .datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 3
-            })
-            .on("change", function() {
-                to.datepicker("option", "minDate", getDate(this));
-            }),
-            to = $("#to").datepicker({
-                defaultDate: "+1w",
-                changeMonth: true,
-                numberOfMonths: 3
-            })
-            .on("change", function() {
-                from.datepicker("option", "maxDate", getDate(this));
-            });
-
-        function getDate(element) {
-            var date;
-            try {
-                date = $.datepicker.parseDate(dateFormat, element.value);
-            } catch (error) {
-                date = null;
-            }
-
-            return date;
-        }
-    });
+    <script src="main.js ">
     </script>
 </body>
 
