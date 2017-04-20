@@ -3,6 +3,7 @@ var York = false;
 var Leeds = false;
 var date;
 
+
 function doalert(city) {
 
     if (city == "York") {
@@ -18,5 +19,6 @@ function doalert(city) {
 }
 
 function submit() {
-    alert(datepicker.value);
+    alert(from.value);
+    alert("Manchester: " + Manchester + " York: " + York + " Leeds: " + Leeds + " between " + from.value + " and " + until.value);
 }
