@@ -11,20 +11,42 @@
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Gig Finder
-</a>
-            </div>
             <ul class="nav navbar-nav">
                 <li><a href="index.html">Home</a></li>
                 <li class="active"><a href="getgigging.html">Get Gigging</a></li>
-                <li><a href="#">Host a Gig</a></li>
+                <li><a href="hostagig.html">Host a Gig</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
     <h1> Get Gigging </h1>
-    <script src="bootstrap/bootstrap.js">
+    <p>Select where you want to play and when</p>
+    <!-- <button type="button" class="btn">Basic</button>
+<button type="button" class="btn">Basic</button>
+<button type="button" class="btn btn-default">Default</button>
+<button type="button active" class="btn btn-default">Default</button>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+ -->
+    <br>
+    <br>
+    <form action="">
+        <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)">Manchester
+        <br>
+        <input type="checkbox" name="city" value="York" onchange="doalert(this.value)">York
+        <br>
+        <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)">Leeds
+    </form>
+    <p>Date:
+        <input type="text" id="datepicker">
+    </p>
+    <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
+    <script src=" main.js ">
+    </script>
+    <script src="bootstrap/bootstrap.js ">
     </script>
 </body>
 
