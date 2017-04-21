@@ -5,13 +5,12 @@ var data = [{
     "venue": null,
     "date": "04/05/2017",
     "startTime": "21:13",
+    "numberofslots": 5,
     "bands": [
-        { id: 1, name: "one" }
-    ],
-    "band1": "sagittis",
-    "band2": "quam sollicitudin vitae",
-    "band3": "eleifend donec ut",
-    "band4": null
+        { "id": 1, "name": "Bruno Mars" },
+        { "id": 2, "name": "Coldplay" },
+        { "id": 3, "name": "Linkin Park" }
+    ]
 }, {
     "id": 2,
     "city": "Manchester",
@@ -325,10 +324,31 @@ function doalert(city) {
     console.log(city);
 }
 
+var obj = {
+    name: 'Mike'
+}
+
+var obj2 = obj;
+
+obj.name = 'James';
+
+console.log(obj2);
+
 function submit() {
-    console.log(from.value);
     //alert(from.value - until.value);
     alert("Manchester: " + Manchester + " York: " + York + " Leeds: " + Leeds + " between " + from.value + " and " + until.value);
+
+    console.log(from.value);
+    console.log(until.value);
+
+    var compareDate = moment("26/04/2017", "DD/MM/YYYY");
+    var startDate = moment(from.value, "YYYY-MM-DD");
+    var endDate = moment(until.value, "YYYY-MM-DD");
+
+    //omitting the optional third parameter, 'units'
+    //false in this case
+    console.log(compareDate.isBetween(startDate, endDate));
+
 
 
 }
@@ -345,14 +365,17 @@ function submit() {
 //     }
 // });
 
-var arr = [{
-    city: 'York'
-}, {
-    city: 'Manchester'
-}];
+// var arr = [{
+//     city: 'York'
+// }, {
+//     city: 'Manchester'
+// }];
+
 
 var filtered = data.filter(function(item) {
-    return item.city == 'York' || 'Manchester' || 'Leeds';
+    return (
+        (item.city == 'York' || 'Manchester') && (item.date == '04/05/2017')
+    );
 });
 
 
