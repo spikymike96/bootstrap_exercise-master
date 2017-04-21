@@ -1,13 +1,9 @@
-//JSON
-var data = [{
+[{
     "id": 1,
     "city": "Manchester",
     "venue": null,
     "date": "04/05/2017",
     "startTime": "21:13",
-    "bands": [
-        { id: 1, name: "one" }
-    ],
     "band1": "sagittis",
     "band2": "quam sollicitudin vitae",
     "band3": "eleifend donec ut",
@@ -302,58 +298,4 @@ var data = [{
     "band2": "convallis nulla neque libero",
     "band3": "convallis duis",
     "band4": null
-}];
-
-
-var Manchester = false;
-var York = false;
-var Leeds = false;
-var date;
-
-
-function doalert(city) {
-
-    if (city == "York") {
-        York = !York;
-    }
-    if (city == "Manchester") {
-        Manchester = !Manchester;
-    }
-    if (city == "Leeds") {
-        Leeds = !Leeds;
-    }
-    console.log(city);
-}
-
-function submit() {
-    console.log(from.value);
-    //alert(from.value - until.value);
-    alert("Manchester: " + Manchester + " York: " + York + " Leeds: " + Leeds + " between " + from.value + " and " + until.value);
-
-
-}
-
-// $.getJSON("./gigs.json", function(data) {});
-
-// $.ajax({
-//     type: 'GET',
-//     dataType: "jsonp",
-//     url: "gigs.json",
-//     success: function(response) {
-
-//         console.log(response);
-//     }
-// });
-
-var arr = [{
-    city: 'York'
-}, {
-    city: 'Manchester'
-}];
-
-var filtered = data.filter(function(item) {
-    return item.city == 'York' || 'Manchester' || 'Leeds';
-});
-
-
-console.log(filtered);
+}]

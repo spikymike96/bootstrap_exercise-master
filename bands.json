@@ -1,0 +1,25 @@
+[{
+    "id": 1,
+    "name": "the coolest",
+    "bio": "wow we are a really good band",
+    "example1": "sagittis",
+    "example2": "quam sollicitudin vitae",
+    "example3": "eleifend donec ut",
+    "example4": null
+}, {
+    "id": 2,
+    "name": "Coldplay",
+    "bio": "great music for great people",
+    "example1": "pellentesque viverra pede ac",
+    "example2": "venenatis tristique fusce congue",
+    "example3": null,
+    "example4": null
+}, {
+    "id": 3,
+    "name": "Linkin Park",
+    "bio": "for days",
+    "example1": "in magna bibendum imperdiet",
+    "example2": "justo",
+    "example3": "fusce lacus purus",
+    "example4": null
+}]
