@@ -304,54 +304,46 @@ var data = [{
 }];
 
 
-var Manchester = false;
-var York = false;
-var Leeds = false;
-var date;
+var cities = []; //an array for the selected cities to be stored in
 
-
-function doalert(city) {
-
-    if (city == "York") {
-        York = !York;
-    }
-    if (city == "Manchester") {
-        Manchester = !Manchester;
-    }
-    if (city == "Leeds") {
-        Leeds = !Leeds;
-    }
-    console.log(city);
+function isInArray(value, array) { //checks if element is in array
+    return array.indexOf(value) > -1;
 }
 
-var obj = {
-    name: 'Mike'
+function doalert(city) { //when checkbox is checked
+    if (!isInArray(city, cities)) { //if city not in array, add it to the cities array
+        cities.push(city);
+    } else { //if it is, check where in the array it is and get rid of it
+        var index = cities.indexOf(city);
+        cities.splice(index, 1);
+    }
+    console.log(cities);
 }
-
-var obj2 = obj;
-
-obj.name = 'James';
-
-console.log(obj2);
 
 function submit() {
-    //alert(from.value - until.value);
-    alert("Manchester: " + Manchester + " York: " + York + " Leeds: " + Leeds + " between " + from.value + " and " + until.value);
-
-    console.log(from.value);
-    console.log(until.value);
-
-    var compareDate = moment("26/04/2017", "DD/MM/YYYY");
     var startDate = moment(from.value, "YYYY-MM-DD");
     var endDate = moment(until.value, "YYYY-MM-DD");
 
-    //omitting the optional third parameter, 'units'
-    //false in this case
-    console.log(compareDate.isBetween(startDate, endDate));
-
-
-
+    var filtered = data.filter(function(item) { //item is one of the values of 'data' e.g data[0]
+        var date = moment(item.date, "DD/MM/YYYY"); //save the date of a gig
+        return (
+            isInArray(item.city, cities) && //is the city in the city array?
+            (date.isBetween(startDate, endDate)) //is the date of gig inbetween the start and end date?
+        );
+    });
+    console.log(filtered); //new filtered array
 }
+
+var events = (function() {
+    // var eventsArray = [];
+    // cache DOM
+    var $el = $('#output');
+    var $insert = $el.find('#insert-events');
+    var template = Handlebars.compile($el.find('#events-template').html());
+
+    // bind events
+    $insert.html(template(data));
+})();
 
 // $.getJSON("./gigs.json", function(data) {});
 
@@ -372,11 +364,4 @@ function submit() {
 // }];
 
 
-var filtered = data.filter(function(item) {
-    return (
-        (item.city == 'York' || 'Manchester') && (item.date == '04/05/2017')
-    );
-});
-
-
-console.log(filtered);
+// console.log(filtered);

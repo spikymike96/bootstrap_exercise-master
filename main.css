@@ -1,3 +1,65 @@
 * {
     font-family: 'Open Sans', sans-serif;
 }
+
+#parameters {
+    padding: 5px;
+    background-color: #edeff2;
+}
+
+#output {
+    background-color: #c2c4c6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+    /*padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;*/
+    padding: 5px;
+}
+
+
+/*#box1 {
+    background-color: #ba3d1d;
+    background-image: images/me.jpg;
+}
+
+#box2 {
+    background-color: #21bc8e;
+}
+
+#box3 {
+    background-color: green;
+}
+
+#box4 {
+    background-color: orange;
+}
+*/
+
+.flex-item {
+    background-color: tomato;
+    border-style: solid;
+    padding: 5px;
+    width: 400px;
+    height: 250px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: white;
+    font-weight: bold;
+    background-image: images/me.jpg;
+}
+
+.flex-item-header {
+    text-align: center;
+}

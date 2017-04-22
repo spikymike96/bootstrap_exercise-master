@@ -31,31 +31,49 @@
 <button type="button" class="btn btn-warning">Warning</button>
 <button type="button" class="btn btn-danger">Danger</button>
  -->
-    <form action="">
-        <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)">Manchester
-        <br>
-        <input type="checkbox" name="city" value="York" onchange="doalert(this.value)">York
-        <br>
-        <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)">Leeds
-    </form>
-    <form action="fromdatepicker">
-        From:
-        <input id="from" type="date" name="from">
-    </form>
-    <form action="untildatepicker">
-        Until:
-        <input id="until" type="date" name="until">
-    </form>
-    <!-- <p>Date:
+    <div id="parameters">
+        <form action="">
+            <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)"> Manchester
+            <input type="checkbox" name="city" value="York" onchange="doalert(this.value)"> York
+            <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)"> Leeds
+        </form>
+        <form action="fromdatepicker">
+            From:
+            <input id="from" type="date" name="from">
+        </form>
+        <form action="untildatepicker">
+            Until:
+            <input id="until" type="date" name="until">
+        </form>
+        <!-- <p>Date:
     <input type="text" id="datepicker">
 </p>
  -->
-    <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
-    <!-- SCRIPTS
- -->
+        <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
+    </div>
+    <H3>April</H3>
+    <p>Gig Date</p>
+    <div id="output">
+        <div id="insert-events"></div>
+        <script id="events-template" type="text/template">
+            {{#each this}}
+            <div class="flex-item">
+                <div class="flex-item-header">
+                    <p> {{city}} </p>
+                </div>
+                <img src="images/me.jpg" width=60%>
+                <div class="flex-item-info">
+                    <p> Date: 16/01/1996 hello there </p>
+                    <p> hello there </p>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="bootstrap/bootstrap.js ">
+    <script src="bootstrap/js/bootstrap.js ">
     </script>
+    <script src="JS/Lib/handlebars-v4.0.5.js"></script>
     <script src="JS/Lib/moment.js"></script>
     <script src="JS/main.js ">
     </script>
