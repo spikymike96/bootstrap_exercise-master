@@ -334,7 +334,6 @@ function submit() {
     console.log(filtered); //new filtered array
 
     events.set(filtered);
-
 }
 
 var search = (function() {
@@ -342,25 +341,25 @@ var search = (function() {
 })();
 
 var events = (function() {
-    var eventsArray = [];
+    var eventsArray = []; //self contained array, events.set(filtered) passes our filtered array in
 
     // cache DOM
-    var $el = $('#output');
-    var $insert = $el.find('#insert-events');
-    var template = Handlebars.compile($el.find('#events-template').html());
+    var $el = $('#output'); //the area where the info is gonna be displayed
+    var $insert = $el.find('#insert-events'); //
+    var template = Handlebars.compile($el.find('#events-template').html()); //the template the html adheres to
 
     // bind events
     function render() {
-        $insert.html(template(eventsArray));
+        $insert.html(template(eventsArray)); //inserts into template, in {{#each this}} it is THIS
     }
 
     function setEvents(data) {
-        eventsArray = data;
+        eventsArray = data; //events array become the filtered array
         render();
     }
 
     return {
-        set: setEvents
+        set: setEvents //filtered into setEvents^
     };
 })();
 

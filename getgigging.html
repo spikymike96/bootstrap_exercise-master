@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Well shit here we go</title>
+    <title>Get Gigging</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
@@ -21,16 +21,6 @@
     </nav>
     <h1> Get Gigging </h1>
     <p>Select where you want to play and when</p>
-    <!-- <button type="button" class="btn">Basic</button>
-<button type="button" class="btn">Basic</button>
-<button type="button" class="btn btn-default">Default</button>
-<button type="button active" class="btn btn-default">Default</button>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-danger">Danger</button>
- -->
     <div id="parameters">
         <form action="">
             <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)"> Manchester
@@ -45,19 +35,17 @@
             Until:
             <input id="until" type="date" name="until">
         </form>
-        <!-- <p>Date:
-    <input type="text" id="datepicker">
-</p>
- -->
         <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
     </div>
     <H3>April</H3>
     <p>Gig Date</p>
     <div id="output">
         <div id="insert-events"></div>
+        <!-- empty div for the template to be placed into -->
         <script id="events-template" type="text/template">
             {{#each this}}
-            <div class="flex-item" value="{{id}}">
+            <!-- from $insert.html(template(eventsArray)); in render function-->
+            <a class="flex-item" href="link/id={{id}}" value="{{id}}">
                 <div class="flex-item-header">
                     <p> {{city}} </p>
                 </div>
@@ -66,10 +54,12 @@
                     <p> Date: 16/01/1996 hello there </p>
                     <p> hello there </p>
                 </div>
-            </div>
+            </a>
             {{/each}}
         </script>
     </div>
+    <!-- SCRIPTS
+ -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="bootstrap/js/bootstrap.js ">
     </script>
