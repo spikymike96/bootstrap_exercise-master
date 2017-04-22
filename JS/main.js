@@ -332,17 +332,36 @@ function submit() {
         );
     });
     console.log(filtered); //new filtered array
+
+    events.set(filtered);
+
 }
 
+var search = (function() {
+
+})();
+
 var events = (function() {
-    // var eventsArray = [];
+    var eventsArray = [];
+
     // cache DOM
     var $el = $('#output');
     var $insert = $el.find('#insert-events');
     var template = Handlebars.compile($el.find('#events-template').html());
 
     // bind events
-    $insert.html(template(data));
+    function render() {
+        $insert.html(template(eventsArray));
+    }
+
+    function setEvents(data) {
+        eventsArray = data;
+        render();
+    }
+
+    return {
+        set: setEvents
+    };
 })();
 
 // $.getJSON("./gigs.json", function(data) {});
