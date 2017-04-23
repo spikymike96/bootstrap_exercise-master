@@ -27,8 +27,9 @@ console.log(eventId);
 var filtered = data.filter(function(item) { //item is one of the values of 'data' e.g data[0]
     return item.id == eventId;
 })[0];
-
 event.set(filtered);
+
+
 
 // for loop over filtered.bands
 // then a filter on bandData
