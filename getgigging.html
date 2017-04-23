@@ -45,13 +45,15 @@
         <script id="events-template" type="text/template">
             {{#each this}}
             <!-- from $insert.html(template(eventsArray)); in render function-->
-            <a class="flex-item" href="link/id={{id}}" value="{{id}}">
+            <a class="flex-item" value="{{id}}" href="event.html#{{id}}" onclick="eventPage()">
+                <!-- href="event/id={{id}}" ^^^^
+ -->
                 <div class="flex-item-header">
                     <p> {{city}} </p>
                 </div>
                 <img src="images/me.jpg" width=60%>
                 <div class="flex-item-info">
-                    <p> Date: 16/01/1996 hello there </p>
+                    <p> Date: {{date}} </p>
                     <p> hello there </p>
                 </div>
             </a>
@@ -61,12 +63,11 @@
     <!-- SCRIPTS
  -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="bootstrap/js/bootstrap.js ">
-    </script>
+    <script src="bootstrap/js/bootstrap.js "></script>
     <script src="JS/Lib/handlebars-v4.0.5.js"></script>
     <script src="JS/Lib/moment.js"></script>
-    <script src="JS/main.js ">
-    </script>
+    <script src="JS/main.js "></script>
+    <script src="JS/getgigging.js"></script>
 </body>
 
 </html>
