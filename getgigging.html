@@ -43,7 +43,8 @@
         <div id="insert-events"></div>
         <!-- empty div for the template to be placed into -->
         <script id="events-template" type="text/template">
-            {{#each this}}
+            {{#unless this}}
+            <h1>nope</h1> {{/unless}} {{#each this}}
             <!-- from $insert.html(template(eventsArray)); in render function-->
             <a class="flex-item" value="{{id}}" href="event.html#{{id}}" onclick="eventPage()">
                 <!-- href="event/id={{id}}" ^^^^

@@ -22,6 +22,14 @@
     padding: 5px;
 }
 
+#insert-bands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: center;
+}
+
 #insert-events {
     display: flex;
     flex-wrap: wrap;
@@ -56,9 +64,19 @@
     padding: 5px;
     width: 400px;
     height: 250px;
-    margin-top: 10px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin: 10px 5px 0;
+    color: white;
+    font-weight: bold;
+    background-image: images/me.jpg;
+}
+
+.band-flex-item {
+    background-color: #6bd2e0;
+    /*border-style: solid;
+*/
+    width: 200px;
+    height: 100px;
+    margin: 10px 5px 0;
     color: white;
     font-weight: bold;
     background-image: images/me.jpg;

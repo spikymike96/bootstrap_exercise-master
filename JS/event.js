@@ -51,7 +51,7 @@ var bands = (function() {
 
             bandArray.push(filteredBands);
 
-            console.log(filteredBands);
+            console.log(bandArray);
         }
 
         console.log(bandArray);
