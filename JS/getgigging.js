@@ -35,7 +35,7 @@ var search = (function() {
 })();
 
 function eventPage() {
-    alert();
+
 }
 
 var events = (function() {

@@ -1,5 +1,6 @@
 var event = (function() {
     var eventObject = {}; //self contained array, events.set(filtered) passes our filtered array in
+    var filteredBands = [];
 
     // cache DOM
     var $el = $('#output'); //the area where the info is gonna be displayed
@@ -13,28 +14,42 @@ var event = (function() {
 
     function setEvent(data) {
         eventObject = data; //events array become the filtered array
+
+        loop();
+        console.log(filteredBands);
+
         render();
     }
+
+    function loop() {
+        for (var i = 0; i < filtered.bands.length; i++) {
+            filteredBands = bandData.filter(function(item) { //item is one of the values of 'data' e.g data[0]
+                return item.id == filtered.bands[i].id;
+            })[0];
+        }
+    }
+
+
 
     return {
         set: setEvent //filtered into setEvents^
     };
 })();
 
-var eventId = window.location.hash.substr(1);
-console.log(eventId);
+var eventId = window.location.hash.substr(1); //theIDofthepage after the rest of the URL
+
 
 var filtered = data.filter(function(item) { //item is one of the values of 'data' e.g data[0]
     return item.id == eventId;
 })[0];
+
+
 event.set(filtered);
-
-
 
 // for loop over filtered.bands
 // then a filter on bandData
 
-console.log(filtered);
+
 
 
 // get the id from the url

@@ -106,9 +106,10 @@ var data = [{
     "date": "27/04/2017",
     "startTime": "18:06",
     "bands": [
-        { "id": 1, "name": "Bruno Mars" },
+        { "id": 4, "name": "Tyketto" },
         { "id": 2, "name": "Coldplay" },
-        { "id": 3, "name": "Linkin Park" }
+        { "id": 3, "name": "Linkin Park" },
+        { "id": 5, "name": "Mallory Knox" }
     ]
 }, {
     "id": 11,
@@ -342,4 +343,10 @@ var bandData = [{
 }, {
     "id": 3,
     "name": "Linkin Park",
+}, {
+    "id": 4,
+    "name": "Tyketto",
+}, {
+    "id": 5,
+    "name": "Mallory Knox",
 }];
