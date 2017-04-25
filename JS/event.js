@@ -45,9 +45,9 @@ var bands = (function() {
         //bandArray = bands; //events array become the filtered array
 
         for (var i = 0; i < bands.length; i++) {
-            var filteredBands = bandData.filter(function(item) { //item is one of the values of 'data' e.g data[0]
+            var filteredBands = bandData.find(function(item) { //item is one of the values of 'data' e.g data[0]
                 return item.id == filtered.bands[i].id;
-            })[0];
+            });
 
             bandArray.push(filteredBands);
 
@@ -69,9 +69,9 @@ var bands = (function() {
 var eventId = window.location.hash.substr(1); //theIDofthepage after the rest of the URL
 
 
-var filtered = data.filter(function(item) { //item is one of the values of 'data' e.g data[0]
+var filtered = data.find(function(item) { //item is one of the values of 'data' e.g data[0]
     return item.id == eventId;
-})[0];
+});
 
 
 event.set(filtered);
