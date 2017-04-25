@@ -20,7 +20,7 @@
         </div>
     </nav>
     </div>
-    <div id="output">
+    <div id="eventInfo">
         <div id="insert-event"></div>
         <!-- empty div for the template to be placed into -->
         <script id="event-template" type="text/template">
@@ -32,8 +32,18 @@
                 <p> {{city}} </p>
                 <p> {{venue}} </p>
                 <p> Time: {{startTime}} </p>
-                <p> {{bands}}</p>
             </div>
+        </script>
+    </div>
+    <div id="bandsPlaying">
+        <div id="insert-bands"></div>
+        <script id="band-template" type="text/template">
+            {{#each this}}
+            <!-- from $insert.html(template(eventsArray)); in render function-->
+            <div value="{{id}}">
+                <p> {{id}} {{name}} </p>
+            </div>
+            {{/each}}
         </script>
     </div>
     <!-- SCRIPTS
