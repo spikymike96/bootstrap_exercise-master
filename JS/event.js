@@ -1,6 +1,5 @@
 var event = (function() {
     var eventObject = {}; //self contained array, events.set(filtered) passes our filtered array in
-    var filteredBands = [];
 
     // cache DOM
     var $el = $('#output'); //the area where the info is gonna be displayed
@@ -12,20 +11,26 @@ var event = (function() {
         $insert.html(template(eventObject)); //inserts into template, in {{#each this}} it is THIS
     }
 
+    var testArray = [];
+
     function setEvent(data) {
         eventObject = data; //events array become the filtered array
 
         loop();
-        console.log(filteredBands);
+        console.log(testArray);
 
         render();
     }
 
     function loop() {
         for (var i = 0; i < filtered.bands.length; i++) {
-            filteredBands = bandData.filter(function(item) { //item is one of the values of 'data' e.g data[0]
+            var filteredBands = bandData.filter(function(item) { //item is one of the values of 'data' e.g data[0]
                 return item.id == filtered.bands[i].id;
             })[0];
+
+            testArray.push(filteredBands);
+
+            console.log(filteredBands);
         }
     }
 
