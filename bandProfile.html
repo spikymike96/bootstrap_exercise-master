@@ -20,12 +20,13 @@
         </div>
     </nav>
     </div>
-    <h1> BAND PROFILE </h1>
     <p> A page to show off the band. A bio, images social media links, sound files etc. </p>
     <div id="bandProfile">
         <div id="insert-bandInfo"></div>
         <script id="bandInfo-template" type="text/template">
-            <p>{{id}}</p>
+            <h1>{{name}}</h1>
+            <p>{{bio}} </p>
+            <img src={{image}}>
             <!-- from $insert.html(template(eventsArray)); in render function-->
         </script>
     </div>

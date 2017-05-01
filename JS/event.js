@@ -15,8 +15,10 @@ var event = (function() {
 
     function setEvent(data) {
         eventObject = data; //events array become the filtered array
+        eventObject.slotsLeft = eventObject.numberofslots - eventObject.bands.length;
+        console.log(eventObject.slotsLeft);
 
-        console.log(testArray);
+        console.log(eventObject);
 
         render();
     }
@@ -55,7 +57,6 @@ var bands = (function() {
         }
 
         console.log(bandArray);
-
         render();
 
     }
