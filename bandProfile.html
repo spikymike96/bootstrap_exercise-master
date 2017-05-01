@@ -26,6 +26,10 @@
         <script id="bandInfo-template" type="text/template">
             <h1>{{name}}</h1>
             <p>{{bio}} </p>
+            <audio controls>
+                <source src="music/waterworks.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+            </audio>
+            <br>
             <img src={{image}}>
             <!-- from $insert.html(template(eventsArray)); in render function-->
         </script>
