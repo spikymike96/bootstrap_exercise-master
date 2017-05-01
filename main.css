@@ -82,6 +82,18 @@
     background-image: images/me.jpg;
 }
 
+.apply-flex-item {
+    background-color: tomato;
+    /*border-style: solid;
+*/
+    width: 200px;
+    height: 100px;
+    margin: 10px 5px 0;
+    color: white;
+    font-weight: bold;
+    background-image: images/me.jpg;
+}
+
 .flex-item:hover {
     border: 1px solid white;
 }
@@ -89,6 +101,7 @@
 .flex-item-header {
     text-align: center;
 }
+
 
 /*.navbar {
     background-color: #1b2e4c;

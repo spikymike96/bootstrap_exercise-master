@@ -27,13 +27,11 @@
             <!-- from $insert.html(template(eventsArray)); in render function-->
             <div value="{{id}}">
                 <h1> yo </h1>
-                <p> ID: {{id}} </p>
                 <p> Date: {{date}} </p>
                 <p> {{city}} </p>
                 <p> {{venue}} </p>
                 <p> Time: {{startTime}} </p>
-                <p> {{numberofslots}} </p>
-                <p> {{slotsLeft}} </p>
+                <h3> there are {{slotsLeft}} slots available for this gig </h3>
             </div>
         </script>
     </div>
@@ -48,10 +46,21 @@
                 </div>
                 <div class="flex-item-info">
                 </div>
+                <div class="flex-item-apply">
+                </div>
             </a>
             {{/each}}
             <!--  -->
             {{slotsLeft}}
+            <a class="apply-flex-item" value="{{id}}" href="apply.html">
+                <div class="flex-item-header">
+                    <p> Apply</p>
+                </div>
+                <div class="flex-item-info">
+                </div>
+                <div class="flex-item-apply">
+                </div>
+            </a>
         </script>
     </div>
     <!-- SCRIPTS
