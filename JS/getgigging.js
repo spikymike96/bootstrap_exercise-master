@@ -12,6 +12,7 @@ function doalert(city) { //when checkbox is checked
         cities.splice(index, 1);
     }
     console.log(cities);
+
 }
 
 function submit() {
@@ -26,6 +27,8 @@ function submit() {
         );
     });
     console.log(filtered); //new filtered array
+    var eventNo = filtered.length;
+    swal("Nice, there are " + filtered.length + " available events!");
 
     events.set(filtered);
 }
