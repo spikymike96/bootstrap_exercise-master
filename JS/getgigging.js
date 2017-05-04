@@ -12,6 +12,9 @@ function doalert(city) { //when checkbox is checked
         cities.splice(index, 1);
     }
     console.log(cities);
+    var firebaseRef = firebase.database().ref();
+    //firebaseRef.child("mate").set("lit");
+    firebaseRef.push("mate").set("lit");
 
 }
 

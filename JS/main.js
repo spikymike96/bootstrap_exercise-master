@@ -388,3 +388,10 @@ var bandData = [{
     "id": 5,
     "name": "Mallory Knox",
 }];
+
+function cmon() {
+    alert();
+    var firebaseRef = firebase.database().ref();
+    //firebaseRef.child("mate").set("lit");
+    firebaseRef.push("mate").set("lit");
+}

@@ -27,20 +27,33 @@
             </ul>
         </div>
     </nav>
-    <iframe src="https://www.youtube.com/embed/q6EoRBvdVPQ" frameborder="0" allowfullscreen></iframe>
-    <div>
-        First name:
+    <div class="container">
+        Email
         <br>
-        <input type="text" name="firstname" value="Username">
-        <br> Last name:
+        <input id="txtEmail" type="email" placeholder="Email">
+        <br> Password
         <br>
-        <input type="text" name="lastname" value="Password">
+        <input id="txtPassword" type="password" placeholder="Password">
         <br>
         <br>
-        <input type="submit" value="Submit">
+        <button id="btnLogin" class="btn btn-action"> Log In</button>
+        <button id="btnSignUp" class="btn btn-secondary"> Sign Up</button>
+        <button id="btnLogOut" class="btn btn-action hide"> Log Out</button>
     </div>
-    <script src="bootstrap/bootstrap.js">
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCl0n3pakWK8hUJBlTS-U2_-x-CJbyaUC8",
+        authDomain: "project-1-746a9.firebaseapp.com",
+        databaseURL: "https://project-1-746a9.firebaseio.com",
+        projectId: "project-1-746a9",
+        storageBucket: "project-1-746a9.appspot.com",
+        messagingSenderId: "431681120406"
+    };
+    firebase.initializeApp(config);
     </script>
+    <script src="JS/login.js"></script>
 </body>
 
 </html>

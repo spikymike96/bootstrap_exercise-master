@@ -3,7 +3,6 @@
 
 <head>
     <title>Gig For Days</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
@@ -24,6 +23,7 @@
             </ul>
         </div>
     </nav>
+    <button type="button" class="btn btn-default" onclick="cmon()">Submit</button>
     <img src="images/GIGFINDER.png" width="30%">
     <p>Looking to play shows in cities you've never been before?</p>
     <img src="images/crowd.jpg" width="100%">
@@ -35,11 +35,22 @@
     <img src="images/crowd2.jpg" width="100%">
     <h3> How does it work?</h3>
     <p>Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example Example </p>
-    <script src="bootstrap/bootstrap.js">
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCl0n3pakWK8hUJBlTS-U2_-x-CJbyaUC8",
+        authDomain: "project-1-746a9.firebaseapp.com",
+        databaseURL: "https://project-1-746a9.firebaseio.com",
+        projectId: "project-1-746a9",
+        storageBucket: "project-1-746a9.appspot.com",
+        messagingSenderId: "431681120406"
+    };
+    firebase.initializeApp(config);
     </script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
- -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="JS/main.js "></script>
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
