@@ -23,21 +23,23 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="login.html">Log In</a></li>
+                <li class="login active"><a href="login.html">Log In</a></li>
             </ul>
         </div>
     </nav>
     <div class="container">
-        Email
-        <br>
-        <input id="txtEmail" type="email" placeholder="Email">
-        <br> Password
-        <br>
-        <input id="txtPassword" type="password" placeholder="Password">
-        <br>
-        <br>
-        <button id="btnLogin" class="btn btn-action"> Log In</button>
-        <button id="btnSignUp" class="btn btn-secondary"> Sign Up</button>
+        <div id="loginEmailNPass">
+            Email
+            <br>
+            <input id="txtEmail" type="email" placeholder="Email">
+            <br> Password
+            <br>
+            <input id="txtPassword" type="password" placeholder="Password">
+            <br>
+            <br>
+            <button id="btnLogin" class="btn btn-action"> Log In</button>
+            <button id="btnSignUp" class="btn btn-secondary"> Sign Up</button>
+        </div>
         <button id="btnLogOut" class="btn btn-action hide"> Log Out</button>
     </div>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>

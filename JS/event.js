@@ -78,6 +78,135 @@ var filtered = data.find(function(item) { //item is one of the values of 'data' 
 event.set(filtered);
 bands.set(filtered.bands);
 
+logIn();
+
+function logIn() {
+
+}
+
+
+var firebaseRef = firebase.database().ref();
+
+
+const applyBtn = document.getElementById('eventApplyBtn');
+
+applyBtn.addEventListener('click', function(e) {
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+
+        if (firebaseUser) {
+            swal("ye");
+
+        } else {
+            console.log("Not Logged In");
+            sweetLogin()
+            var inputtedEmail;
+            var inputtedPassword;
+
+            swal({
+                title: 'Input email address',
+                input: 'email',
+                showCancelButton: true
+
+            }).then(function(email) {
+                inputtedEmail = email;
+                swal({
+                    type: 'success',
+                    html: 'Entered email: ' + email
+                })
+                swal({
+                    title: 'Enter your password',
+                    input: 'password',
+                }).then(function(password) {
+                    inputtedPassword = password;
+                    if (password) {
+                        swal({
+                            type: 'success',
+                            html: 'Entered password: ' + password
+                        })
+                    }
+                })
+            })
+
+            const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
+            promise.catch(e => console.log(e.message + "nooooo"));
+
+
+        }
+    })
+})
+
+function sweetLogin() {
+
+
+}
+
+
+swal({
+    title: 'You must be logged in to access this feature',
+    showCancelButton: true,
+
+    confirmButtonText: 'Login',
+    cancelButtonText: 'Sign Up',
+}).then(function() {
+    swal({
+        title: 'Input email address',
+        input: 'email',
+        showCancelButton: true
+
+    }).then(function(email) {
+        inputtedEmail = email;
+        swal({
+            type: 'success',
+            html: 'Entered email: ' + email
+        })
+        swal({
+            title: 'Enter your password',
+            input: 'password',
+        }).then(function(password) {
+            inputtedPassword = password;
+            if (password) {
+                swal({
+                    type: 'success',
+                    html: 'Entered password: ' + password
+                })
+            }
+        })
+    })
+}, function(dismiss) {
+    // dismiss can be 'cancel', 'overlay',
+    // 'close', and 'timer'
+    if (dismiss === 'cancel') {
+        swal({
+            title: 'Input email address',
+            input: 'email',
+            showCancelButton: true
+
+        }).then(function(email) {
+            inputtedEmail = email;
+            swal({
+                type: 'success',
+                html: 'Entered email: ' + email
+            })
+            swal({
+                title: 'Enter your password',
+                input: 'password',
+            }).then(function(password) {
+                inputtedPassword = password;
+                if (password) {
+                    swal({
+                        type: 'success',
+                        html: 'Entered password: ' + password
+                    })
+                }
+            })
+        })
+    }
+})
+
+
+
+//////////////////////////////////////////////////////
 // for loop over filtered.bands
 // then a filter on bandData
 
