@@ -11,7 +11,6 @@ var event = (function() {
         $insert.html(template(eventObject)); //inserts into template, in {{#each this}} it is THIS
     }
 
-    var testArray = [];
 
     function setEvent(data) {
         eventObject = data; //events array become the filtered array
@@ -78,29 +77,24 @@ var filtered = data.find(function(item) { //item is one of the values of 'data' 
 event.set(filtered);
 bands.set(filtered.bands);
 
-logIn();
-
-function logIn() {
-
-}
-
-
 
 var firebaseRef = firebase.database().ref();
 const auth = firebase.auth();
-
-
-
 const applyBtn = document.getElementById('eventApplyBtn');
 
+function loginCheck() {
+
+
+
+
+}
+
 applyBtn.addEventListener('click', function(e) {
-
     firebase.auth().onAuthStateChanged(firebaseUser => {
-
-
 
         if (firebaseUser) {
             swal("You're logged in!");
+            window.open('apply.html#' + eventId, '_self', false)
 
         } else {
             var inputtedEmail;
@@ -117,12 +111,10 @@ applyBtn.addEventListener('click', function(e) {
                     showCancelButton: true
 
                 }).then(function(email) {
+
                     inputtedEmail = email;
                     console.log(inputtedEmail);
-                    swal({
-                        type: 'success',
-                        html: 'Entered email: ' + email
-                    })
+
                     swal({
                         title: 'Enter your password',
                         input: 'password',
@@ -132,11 +124,14 @@ applyBtn.addEventListener('click', function(e) {
                         if (password) {
                             swal({
                                 type: 'success',
-                                html: 'Entered password: ' + password
+                                html: 'Password Entered Successfully'
                             })
                         }
+
                         const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
                         promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
+
+
                     })
 
                 })
@@ -144,48 +139,38 @@ applyBtn.addEventListener('click', function(e) {
             }, function(dismiss) {
                 if (dismiss === 'cancel') {
                     swal({
-                            title: 'Input email address',
-                            input: 'email',
-                            showCancelButton: true
+                        title: 'Input email address',
+                        input: 'email',
+                        showCancelButton: true
 
-                        }).then(function(email) {
-                            inputtedEmail = email;
-                            console.log(inputtedEmail);
-                            swal({
-                                type: 'success',
-                                html: 'Entered email: ' + email
-                            })
-                            swal({
-                                title: 'Enter your password',
-                                input: 'password',
-                            }).then(function(password) {
-                                inputtedPassword = password;
-                                console.log(inputtedPassword);
-                                if (password) {
-                                    swal({
-                                        type: 'success',
-                                        html: 'Entered password: ' + password
-                                    })
-                                }
-                                const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                                promise.catch(e => console.log(e.message + "nooooo"));
-                            })
+                    }).then(function(email) {
+                        inputtedEmail = email;
+                        console.log(inputtedEmail);
+
+                        swal({
+                            title: 'Enter your password',
+                            input: 'password',
+                        }).then(function(password) {
+                            inputtedPassword = password;
+                            console.log(inputtedPassword);
+                            if (password) {
+                                swal({
+                                    type: 'success',
+                                    html: 'Password Successfully Entered'
+                                })
+                            }
+                            const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
+                            promise.catch(e => console.log(e.message + "nooooo"));
                         })
-                        // const promise = auth.signUpWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                        // promise.catch(e => console.log(e.message + "nooooo"));
+                    })
 
                 }
             })
 
-
         }
     })
+
 })
-
-function sweetLogin() {
-
-
-}
 
 
 
