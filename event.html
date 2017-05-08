@@ -45,7 +45,7 @@
         <script id="band-template" type="text/template">
             {{#each this}}
             <!-- from $insert.html(template(eventsArray)); in render function-->
-            <div class="band-flex-item" value="{{id}}" href="bandProfile.html#{{id}}">
+            <a class="band-flex-item" value="{{id}}" href="bandProfile.html#{{id}}">
                 <div class="flex-item-header">
                     <p> {{name}} </p>
                 </div>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="flex-item-apply">
                 </div>
-            </div>
+            </a>
             {{/each}}
             <!--  -->
             <a id="eventApplyBtn" class="apply-flex-item" value="{{id}}">
