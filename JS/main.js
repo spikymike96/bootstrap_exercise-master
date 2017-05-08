@@ -90,6 +90,7 @@ var data = [{
     "date": "26/04/2017",
     "startTime": "20:12",
     "numberofslots": 4,
+    "applied": false,
     "bands": [
         { "id": 1, "name": "Bruno Mars" },
         { "id": 2, "name": "Coldplay" },
@@ -393,5 +394,5 @@ function cmon() {
     alert();
     var firebaseRef = firebase.database().ref();
     //firebaseRef.child("mate").set("lit");
-    firebaseRef.push("mate").set("lit");
+    firebaseRef.push().set("hello");
 }
