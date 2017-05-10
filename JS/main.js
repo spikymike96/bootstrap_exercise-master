@@ -390,9 +390,27 @@ var bandData = [{
     "name": "Mallory Knox",
 }];
 
-function cmon() {
-    alert();
+function cmon() { // 
+    alert("ite");
     var firebaseRef = firebase.database().ref();
-    //firebaseRef.child("mate").set("lit");
-    firebaseRef.push().set("hello");
+
+    //firebaseRef.push("bands").set("push");
+    firebaseRef.child("bands").child("hello").set("child");
+
 }
+
+//get elements
+const preObject = document.getElementById('object');
+
+//create references
+const dbRefObject = firebase.database().ref().child('bands');
+
+
+// //sync object changes
+// dbRefObject.on('value', snap => console.log(snap.val()));
+dbRefObject.on('value', snap => {
+        preObject.innerText = JSON.stringify(snap.val(), null, 3);
+    }
+
+
+);
