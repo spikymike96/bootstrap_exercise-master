@@ -1,4 +1,4 @@
-var event = (function() {
+var eventModule = (function() {
     var eventObject = {}; //self contained array, events.set(filtered) passes our filtered array in
 
     // cache DOM
@@ -68,26 +68,44 @@ var bands = (function() {
 
 var eventId = window.location.hash.substr(1); //theIDofthepage after the rest of the URL
 
-
 var filtered = data.find(function(item) { //item is one of the values of 'data' e.g data[0]
     return item.id == eventId;
 });
 
 
-event.set(filtered);
-bands.set(filtered.bands);
 
 
 var firebaseRef = firebase.database().ref();
+
+//create references
+const preObject = document.getElementById('object');
+
+//create references
+const dbRefObject = firebase.database().ref().child('events').child(eventId);
+
+// //sync object changes
+dbRefObject.on('value', snap => {
+    //preObject.innerText = JSON.stringify(snap.val(), null, 0);
+    //dbRefObject.on('value', snap => console.log(snap.val()));
+    eventModule.set(snap.val());
+    console.log(snap.val());
+    bands.set(snap.val().bands);
+
+
+});
+//eventModule.set(filtered);
+bands.set(filtered.bands);
+
+
+//console.log(filtered);
+
+
+
+
 const auth = firebase.auth();
 const applyBtn = document.getElementById('eventApplyBtn');
 
-function loginCheck() {
-
-
-
-
-}
+function loginCheck() {}
 
 applyBtn.addEventListener('click', function(e) {
     firebase.auth().onAuthStateChanged(firebaseUser => {
@@ -171,6 +189,11 @@ applyBtn.addEventListener('click', function(e) {
     })
 
 })
+
+
+
+
+
 
 
 

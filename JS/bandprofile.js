@@ -33,9 +33,10 @@ var bandID = window.location.hash.substr(1);
 
 
 
-var filtered = bandData.find(function(item) { //item is one of the values of 'data' e.g data[0]
-    return item.id == bandID;
-});
+// var filtered = bandData.find(function(item) { //item is one of the values of 'data' e.g data[0]
+//     return item.id == bandID;
+// });
+
 
 
 var firebaseRef = firebase.database().ref();
@@ -53,5 +54,5 @@ dbRefObject.on('value', snap => {
     console.log(snap.val());
 });
 
-console.log(filtered);
-console.log(dbRefObject);
+//console.log(filtered);
+//console.log(dbRefObject);
