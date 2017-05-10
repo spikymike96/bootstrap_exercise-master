@@ -37,8 +37,22 @@
             <!-- from $insert.html(template(eventsArray)); in render function-->
         </script>
     </div>
+    <h1 id="object">hello</h1>
     <!-- SCRIPTS
  -->
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCl0n3pakWK8hUJBlTS-U2_-x-CJbyaUC8",
+        authDomain: "project-1-746a9.firebaseapp.com",
+        databaseURL: "https://project-1-746a9.firebaseio.com",
+        projectId: "project-1-746a9",
+        storageBucket: "project-1-746a9.appspot.com",
+        messagingSenderId: "431681120406"
+    };
+    firebase.initializeApp(config);
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
     <script src="bootstrap/js/bootstrap.js">
     </script>

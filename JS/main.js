@@ -360,18 +360,23 @@ var data = [{
     "startTime": "19:09",
     "numberofslots": 5,
     "bands": [
-        { "id": 3 },
+        { "id": 0 },
         { "id": 2 },
         { "id": 1 }
     ]
 }];
 
 var bandData = [{
+    "id": 0,
+    "name": "Seize The Chance",
+    "bio": "The best",
+    "image": ""
+
+}, {
     "id": 1,
     "name": "Bruno Mars",
     "bio": "After an unsuccessful stint with Motown Records, Mars signed with Atlantic Records in 2009. He became recognized as a solo artist after lending his vocals and co-writing the hooks for the songs Nothin' on You by B.o.B, and Billionaire by Travie McCoy. He also helped write the hits by Flo Rida featuring Kesha, Wavin Flag by Knaan, and Fuck You! by Cee Lo Green, also known as Forget You. In October 2010, he released his album, Doo-Wops & Hooligans. ",
-    "image": "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/2558_10152049125352244_910603040_n.jpg?oh=c5b20894d5a2ae7c72a9383927551fb4&oe=5989271F",
-
+    "image": "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/2558_10152049125352244_910603040_n.jpg?oh=c5b20894d5a2ae7c72a9383927551fb4&oe=5989271F"
 }, {
     "id": 2,
     "name": "Coldplay",
@@ -400,17 +405,15 @@ function cmon() { //
 }
 
 //get elements
-const preObject = document.getElementById('object');
+// const preObject = document.getElementById('object');
 
-//create references
-const dbRefObject = firebase.database().ref().child('bands');
+// //create references
+// const dbRefObject = firebase.database().ref().child('bands').child("1");
+// //const dbRefObject = firebase.database().ref().child('events');
 
+// // //sync object changes
+// // dbRefObject.on('value', snap => console.log(snap.val()));
+// dbRefObject.on('value', snap => {
 
-// //sync object changes
-// dbRefObject.on('value', snap => console.log(snap.val()));
-dbRefObject.on('value', snap => {
-        preObject.innerText = JSON.stringify(snap.val(), null, 3);
-    }
-
-
-);
+//     preObject.innerText = JSON.stringify(snap.val().bio, null, 0);
+// });

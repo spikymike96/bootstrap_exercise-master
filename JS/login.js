@@ -13,7 +13,6 @@ btnLogin.addEventListener('click', function(e) {
     const auth = firebase.auth();
     //sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
-
     promise.catch(e => console.log(e.message + "nooooo"));
 
 
@@ -25,7 +24,8 @@ btnSignUp.addEventListener('click', function(e) {
     const auth = firebase.auth();
     //sign Up
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message + "nooooo"));
+promise.catch(e => console.log(e.message + "nooooo"));
+
 })
 
 btnLogOut.addEventListener('click', function(e) {
