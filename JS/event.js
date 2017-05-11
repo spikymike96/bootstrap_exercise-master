@@ -11,157 +11,81 @@ var eventModule = (function() {
         $insert.html(template(eventObject)); //inserts into template, in {{#each this}} it is THIS
     }
 
-
     function setEvent(data) {
         eventObject = data; //events array become the filtered array
         eventObject.slotsLeft = eventObject.numberofslots - eventObject.bands.length;
-        console.log(eventObject.slotsLeft);
-
-        console.log(eventObject);
-
         render();
     }
-
     return {
         set: setEvent //filtered into setEvents^
     };
 })();
 
-
 var bands = (function() {
-
-
     var bandArray = [];
 
     var $el = $('#bandsPlaying'); //the area where the info is gonna be displayed
     var $insert = $el.find('#insert-bands'); //
     var template = Handlebars.compile($el.find('#band-template').html()); //the template the html adheres to
 
-
     function render() {
         $insert.html(template(bandArray)); //inserts into template, in {{#each this}} it is THIS
     }
 
     function setBands(bands) {
-        //bandArray = bands; //events array become the filtered array
-
-        for (var i = 0; i < bands.length; i++) {
-            var filteredBands = bandData.find(function(item) { //item is one of the values of 'data' e.g data[0]
-                return item.id == filtered.bands[i].id;
-            });
-
-            bandArray.push(filteredBands);
-
-            console.log(bandArray);
-        }
-
-        console.log(bandArray);
+        bandArray = bands; //events array become the filtered array
         render();
 
     }
-
     return {
         set: setBands //filtered into setEvents^
     };
-
 })();
 
 var eventId = window.location.hash.substr(1); //theIDofthepage after the rest of the URL
 
-var filtered = data.find(function(item) { //item is one of the values of 'data' e.g data[0]
-    return item.id == eventId;
-});
-
-
-
-
 var firebaseRef = firebase.database().ref();
-
-//create references
-const preObject = document.getElementById('object');
-
 //create references
 const dbRefObject = firebase.database().ref().child('events').child(eventId);
-
 // //sync object changes
 dbRefObject.on('value', snap => {
-    //preObject.innerText = JSON.stringify(snap.val(), null, 0);
-    //dbRefObject.on('value', snap => console.log(snap.val()));
     eventModule.set(snap.val());
-    console.log(snap.val());
     bands.set(snap.val().bands);
-
-
+    console.log(snap.val().bands);
+    loginCheck();
+    //console.log(filtered.bands)
 });
+
+
 //eventModule.set(filtered);
-bands.set(filtered.bands);
+//bands.set(filtered.bands);
 
+function loginCheck() {
+    const auth = firebase.auth();
+    const applyBtn = document.getElementById('eventApplyBtn');
+    applyBtn.addEventListener('click', function(e) {
+        firebase.auth().onAuthStateChanged(firebaseUser => {
 
-//console.log(filtered);
+            if (firebaseUser) {
+                swal("You're logged in!");
+                window.open('apply.html#' + eventId, '_self', false)
 
-
-
-
-const auth = firebase.auth();
-const applyBtn = document.getElementById('eventApplyBtn');
-
-function loginCheck() {}
-
-applyBtn.addEventListener('click', function(e) {
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-
-        if (firebaseUser) {
-            swal("You're logged in!");
-            window.open('apply.html#' + eventId, '_self', false)
-
-        } else {
-            var inputtedEmail;
-            var inputtedPassword;
-            swal({
-                title: 'You must be logged in to access this feature',
-                showCancelButton: true,
-                confirmButtonText: 'Login',
-                cancelButtonText: 'Sign Up',
-            }).then(function() {
+            } else {
+                var inputtedEmail;
+                var inputtedPassword;
                 swal({
-                    title: 'Input email address',
-                    input: 'email',
-                    showCancelButton: true
-
-                }).then(function(email) {
-
-                    inputtedEmail = email;
-                    console.log(inputtedEmail);
-
-                    swal({
-                        title: 'Enter your password',
-                        input: 'password',
-                    }).then(function(password) {
-                        inputtedPassword = password;
-                        console.log(inputtedPassword);
-                        if (password) {
-                            swal({
-                                type: 'success',
-                                html: 'Password Entered Successfully'
-                            })
-                        }
-
-                        const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                        promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
-
-
-                    })
-
-                })
-
-            }, function(dismiss) {
-                if (dismiss === 'cancel') {
+                    title: 'You must be logged in to access this feature',
+                    showCancelButton: true,
+                    confirmButtonText: 'Login',
+                    cancelButtonText: 'Sign Up',
+                }).then(function() {
                     swal({
                         title: 'Input email address',
                         input: 'email',
                         showCancelButton: true
 
                     }).then(function(email) {
+
                         inputtedEmail = email;
                         console.log(inputtedEmail);
 
@@ -174,21 +98,61 @@ applyBtn.addEventListener('click', function(e) {
                             if (password) {
                                 swal({
                                     type: 'success',
-                                    html: 'Password Successfully Entered'
+                                    html: 'Password Entered Successfully'
                                 })
                             }
-                            const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                            promise.catch(e => console.log(e.message + "nooooo"));
+
+                            const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
+                            promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
+
+
                         })
+
                     })
 
-                }
-            })
+                }, function(dismiss) {
+                    if (dismiss === 'cancel') {
+                        swal({
+                            title: 'Input email address',
+                            input: 'email',
+                            showCancelButton: true
 
-        }
+                        }).then(function(email) {
+                            inputtedEmail = email;
+                            console.log(inputtedEmail);
+
+                            swal({
+                                title: 'Enter your password',
+                                input: 'password',
+                            }).then(function(password) {
+                                inputtedPassword = password;
+                                console.log(inputtedPassword);
+                                if (password) {
+                                    swal({
+                                        type: 'success',
+                                        html: 'Password Successfully Entered'
+                                    })
+                                }
+                                const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
+                                promise.catch(e => console.log(e.message + "nooooo"));
+                            })
+                        })
+
+                    }
+                })
+
+            }
+        })
+
     })
 
-})
+
+
+
+
+}
+
+
 
 
 

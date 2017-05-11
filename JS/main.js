@@ -366,41 +366,41 @@ var data = [{
     ]
 }];
 
-var bandData = [{
-    "id": 0,
-    "name": "Seize The Chance",
-    "bio": "The best",
-    "image": ""
+// var bandData = [{
+//     "id": 0,
+//     "name": "Seize The Chance",
+//     "bio": "The best",
+//     "image": ""
 
-}, {
-    "id": 1,
-    "name": "Bruno Mars",
-    "bio": "After an unsuccessful stint with Motown Records, Mars signed with Atlantic Records in 2009. He became recognized as a solo artist after lending his vocals and co-writing the hooks for the songs Nothin' on You by B.o.B, and Billionaire by Travie McCoy. He also helped write the hits by Flo Rida featuring Kesha, Wavin Flag by Knaan, and Fuck You! by Cee Lo Green, also known as Forget You. In October 2010, he released his album, Doo-Wops & Hooligans. ",
-    "image": "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/2558_10152049125352244_910603040_n.jpg?oh=c5b20894d5a2ae7c72a9383927551fb4&oe=5989271F"
-}, {
-    "id": 2,
-    "name": "Coldplay",
-    "bio": "Coldplay are a British rock band formed in 1996 by lead vocalist and keyboardist Chris Martin and lead guitarist Jonny Buckland at University College London (UCL).[5] After they formed under the name Pectoralz, Guy Berryman joined the group as bassist and they changed their name to Starfish.[6] Will Champion joined as drummer and backing vocalist, completing the performing line-up. Creative Director Phil Harvey is often referred to as the official fifth member by the band.[7] The band renamed themselves Coldplay in 1998",
-    "image": "https://cdn2.fatsoma.com/media/W1siZiIsInB1YmxpYy8yMDE3LzIvOC8xOS8zNS80Ni83MDEvQ29sZHBsYXktcHBjb3JuLTIwMTYuanBnIl1d",
-}, {
-    "id": 3,
-    "name": "Linkin Park",
-    "bio": "Linkin Park is an American rock band from Agoura Hills, California. Formed in 1996, the band rose to international fame with their debut album Hybrid Theory (2000), which was certified diamond by the RIAA in 2005 and multi-platinum in several other countries",
-    "image": "http://www.billboard.com/files/styles/article_main_image/public/media/linkin-park-billboard-650.jpg",
-}, {
-    "id": 4,
-    "name": "Tyketto",
-}, {
-    "id": 5,
-    "name": "Mallory Knox",
-}];
+// }, {
+//     "id": 1,
+//     "name": "Bruno Mars",
+//     "bio": "After an unsuccessful stint with Motown Records, Mars signed with Atlantic Records in 2009. He became recognized as a solo artist after lending his vocals and co-writing the hooks for the songs Nothin' on You by B.o.B, and Billionaire by Travie McCoy. He also helped write the hits by Flo Rida featuring Kesha, Wavin Flag by Knaan, and Fuck You! by Cee Lo Green, also known as Forget You. In October 2010, he released his album, Doo-Wops & Hooligans. ",
+//     "image": "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/2558_10152049125352244_910603040_n.jpg?oh=c5b20894d5a2ae7c72a9383927551fb4&oe=5989271F"
+// }, {
+//     "id": 2,
+//     "name": "Coldplay",
+//     "bio": "Coldplay are a British rock band formed in 1996 by lead vocalist and keyboardist Chris Martin and lead guitarist Jonny Buckland at University College London (UCL).[5] After they formed under the name Pectoralz, Guy Berryman joined the group as bassist and they changed their name to Starfish.[6] Will Champion joined as drummer and backing vocalist, completing the performing line-up. Creative Director Phil Harvey is often referred to as the official fifth member by the band.[7] The band renamed themselves Coldplay in 1998",
+//     "image": "https://cdn2.fatsoma.com/media/W1siZiIsInB1YmxpYy8yMDE3LzIvOC8xOS8zNS80Ni83MDEvQ29sZHBsYXktcHBjb3JuLTIwMTYuanBnIl1d",
+// }, {
+//     "id": 3,
+//     "name": "Linkin Park",
+//     "bio": "Linkin Park is an American rock band from Agoura Hills, California. Formed in 1996, the band rose to international fame with their debut album Hybrid Theory (2000), which was certified diamond by the RIAA in 2005 and multi-platinum in several other countries",
+//     "image": "http://www.billboard.com/files/styles/article_main_image/public/media/linkin-park-billboard-650.jpg",
+// }, {
+//     "id": 4,
+//     "name": "Tyketto",
+// }, {
+//     "id": 5,
+//     "name": "Mallory Knox",
+// }];
 
 function cmon() { // 
-    alert("ite");
-    var firebaseRef = firebase.database().ref();
+    alert("this button does NOTHING! muahahahahah sucks to be you!!!");
+    //var firebaseRef = firebase.database().ref();
 
     //firebaseRef.push("bands").set("push");
-    firebaseRef.child("bands").child("hello").set("child");
+    // firebaseRef.child("bands").child("hello").set("child");
 
 }
 
