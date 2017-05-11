@@ -12,9 +12,7 @@ function doalert(city) { //when checkbox is checked
         cities.splice(index, 1);
     }
     console.log(cities);
-    var firebaseRef = firebase.database().ref();
-    //firebaseRef.child("mate").set("lit");
-    firebaseRef.push("mate").set("lit");
+
 
 }
 
@@ -22,18 +20,28 @@ function submit() {
     var startDate = moment(from.value, "YYYY-MM-DD");
     var endDate = moment(until.value, "YYYY-MM-DD");
 
-    var filtered = data.filter(function(item) { //item is one of the values of 'data' e.g data[0]
-        var date = moment(item.date, "DD/MM/YYYY"); //save the date of a gig
-        return (
-            isInArray(item.city, cities) && //is the city in the city array?
-            (date.isBetween(startDate, endDate)) //is the date of gig inbetween the start and end date?
-        );
-    });
-    console.log(filtered); //new filtered array
-    var eventNo = filtered.length;
-    swal("Nice, there are " + filtered.length + " available events!");
+    var firebaseRef = firebase.database().ref();
+    //create references
+    const dbRefObject = firebase.database().ref().child('events');
+    //sync object changes
+    dbRefObject.on('value', snap => {
+        console.log(snap.val());
 
-    events.set(filtered);
+        var filtered = snap.val().filter(function(item) { //item is one of the values of 'data' e.g data[0]
+            var date = moment(item.date, "DD/MM/YYYY"); //save the date of a gig
+            return (
+                isInArray(item.city, cities) && //is the city in the city array?
+                (date.isBetween(startDate, endDate)) //is the date of gig inbetween the start and end date?
+            );
+        });
+        console.log(filtered); //new filtered array
+        var eventNo = filtered.length;
+        swal("Nice, there are " + filtered.length + " available events!");
+
+        events.set(filtered);
+    });
+
+    // events.set(filtered);
 }
 
 var search = (function() {
@@ -66,6 +74,9 @@ var events = (function() {
         set: setEvents //filtered into setEvents^
     };
 })();
+
+
+
 
 // $.getJSON("./gigs.json", function(data) {});
 
