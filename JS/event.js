@@ -32,11 +32,14 @@ var bands = (function() {
         $insert.html(template(bandArray)); //inserts into template, in {{#each this}} it is THIS
     }
 
+
+
     function setBands(bands) {
         bandArray = bands; //events array become the filtered array
         render();
-
     }
+
+
     return {
         set: setBands //filtered into setEvents^
     };
@@ -52,105 +55,112 @@ dbRefObject.on('value', snap => {
     eventModule.set(snap.val());
     bands.set(snap.val().bands);
     console.log(snap.val().bands);
-    loginCheck();
+
+    applyBtn.addEventListener('click', function(e) {
+
+        loginCheck("apply.html#" + eventId);
+    })
+
     //console.log(filtered.bands)
 });
+
+
 
 
 //eventModule.set(filtered);
 //bands.set(filtered.bands);
 
-function loginCheck() {
-    const auth = firebase.auth();
-    const applyBtn = document.getElementById('eventApplyBtn');
-    applyBtn.addEventListener('click', function(e) {
-        firebase.auth().onAuthStateChanged(firebaseUser => {
+// function loginCheck() {
+//     const auth = firebase.auth();
+//     const applyBtn = document.getElementById('eventApplyBtn');
+//     applyBtn.addEventListener('click', function(e) {
+//         firebase.auth().onAuthStateChanged(firebaseUser => {
 
-            if (firebaseUser) {
-                swal("You're logged in!");
-                window.open('apply.html#' + eventId, '_self', false)
+//             if (firebaseUser) {
+//                 swal("You're logged in!");
+//                 window.open('apply.html#' + eventId, '_self', false)
 
-            } else {
-                var inputtedEmail;
-                var inputtedPassword;
-                swal({
-                    title: 'You must be logged in to access this feature',
-                    showCancelButton: true,
-                    confirmButtonText: 'Login',
-                    cancelButtonText: 'Sign Up',
-                }).then(function() {
-                    swal({
-                        title: 'Input email address',
-                        input: 'email',
-                        showCancelButton: true
+//             } else {
+//                 var inputtedEmail;
+//                 var inputtedPassword;
+//                 swal({
+//                     title: 'You must be logged in to access this feature',
+//                     showCancelButton: true,
+//                     confirmButtonText: 'Login',
+//                     cancelButtonText: 'Sign Up',
+//                 }).then(function() {
+//                     swal({
+//                         title: 'Input email address',
+//                         input: 'email',
+//                         showCancelButton: true
 
-                    }).then(function(email) {
+//                     }).then(function(email) {
 
-                        inputtedEmail = email;
-                        console.log(inputtedEmail);
+//                         inputtedEmail = email;
+//                         console.log(inputtedEmail);
 
-                        swal({
-                            title: 'Enter your password',
-                            input: 'password',
-                        }).then(function(password) {
-                            inputtedPassword = password;
-                            console.log(inputtedPassword);
-                            if (password) {
-                                swal({
-                                    type: 'success',
-                                    html: 'Password Entered Successfully'
-                                })
-                            }
+//                         swal({
+//                             title: 'Enter your password',
+//                             input: 'password',
+//                         }).then(function(password) {
+//                             inputtedPassword = password;
+//                             console.log(inputtedPassword);
+//                             if (password) {
+//                                 swal({
+//                                     type: 'success',
+//                                     html: 'Password Entered Successfully'
+//                                 })
+//                             }
 
-                            const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                            promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
-
-
-                        })
-
-                    })
-
-                }, function(dismiss) {
-                    if (dismiss === 'cancel') {
-                        swal({
-                            title: 'Input email address',
-                            input: 'email',
-                            showCancelButton: true
-
-                        }).then(function(email) {
-                            inputtedEmail = email;
-                            console.log(inputtedEmail);
-
-                            swal({
-                                title: 'Enter your password',
-                                input: 'password',
-                            }).then(function(password) {
-                                inputtedPassword = password;
-                                console.log(inputtedPassword);
-                                if (password) {
-                                    swal({
-                                        type: 'success',
-                                        html: 'Password Successfully Entered'
-                                    })
-                                }
-                                const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                                promise.catch(e => console.log(e.message + "nooooo"));
-                            })
-                        })
-
-                    }
-                })
-
-            }
-        })
-
-    })
+//                             const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
+//                             promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
 
 
+//                         })
+
+//                     })
+
+//                 }, function(dismiss) {
+//                     if (dismiss === 'cancel') {
+//                         swal({
+//                             title: 'Input email address',
+//                             input: 'email',
+//                             showCancelButton: true
+
+//                         }).then(function(email) {
+//                             inputtedEmail = email;
+//                             console.log(inputtedEmail);
+
+//                             swal({
+//                                 title: 'Enter your password',
+//                                 input: 'password',
+//                             }).then(function(password) {
+//                                 inputtedPassword = password;
+//                                 console.log(inputtedPassword);
+//                                 if (password) {
+//                                     swal({
+//                                         type: 'success',
+//                                         html: 'Password Successfully Entered'
+//                                     })
+//                                 }
+//                                 const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
+//                                 promise.catch(e => console.log(e.message + "nooooo"));
+//                             })
+//                         })
+
+//                     }
+//                 })
+
+//             }
+//         })
+
+//     })
 
 
 
-}
+
+
+// }
 
 
 
