@@ -516,12 +516,18 @@
         "date": "28/04/2017",
         "startTime": "19:09",
         "numberofslots": 5,
+        "Promotor": 1,
         "bands": [{
             "id": 0
         }, {
             "id": 2
         }, {
             "id": 1
+        }],
+        "bandsApplied": [{
+            "id": 4
+        }, {
+            "id": 5
         }]
     }],
 
@@ -529,7 +535,8 @@
         "id": 0,
         "name": "Seize The Chance",
         "bio": "The best",
-        "image": ""
+        "image": "",
+        "User": 1,
 
     }, {
         "id": 1,
@@ -552,5 +559,24 @@
     }, {
         "id": 5,
         "name": "Mallory Knox"
+    }],
+
+    "users": [{
+        "id": 0,
+        "email": "mikegardner1996@gmail.com",
+        "BandAccount": "True",
+        "PromotorAccount": "False"
+
+    }, {
+        "id": 1,
+        "email": "james@thewebworkers.co.uk",
+        "BandAccount": "False",
+        "PromotorAccount": "True"
+    }, {
+        "id": 3,
+        "email": "example@example.com",
+        "BandAccount": "True",
+        "PromotorAccount": "True"
     }]
+
 }

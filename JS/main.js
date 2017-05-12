@@ -398,13 +398,23 @@
 
 function cmon() { // 
     alert("this button does NOTHING! muahahahahah sucks to be you!!!");
-    //var firebaseRef = firebase.database().ref();
+    var firebaseRef = firebase.database().ref('users/' + 1);
 
-    //firebaseRef.push("bands").set("push");
-    // firebaseRef.child("bands").child("hello").set("child");
+    const dbRefObject = firebase.database().ref("users/" + 1);
+    // //sync object changes
+    dbRefObject.on('value', snap => {
+        console.log(snap.val());
+    });
+
+    // //firebaseRef.push("users").set("push");
+    // firebaseRef.set({
+    //     id: "1",
+    //     email: "example@example.com"
+    // });
+
+
 
 }
-
 
 function loginCheck(hello) {
     const auth = firebase.auth();

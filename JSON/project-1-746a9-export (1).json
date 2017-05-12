@@ -1,0 +1,597 @@
+{
+    "bands": [{
+        "bio": "The best",
+        "id": 0,
+        "image": "",
+        "name": "Seize The Chance"
+    }, {
+        "bio": "Bruno Mars info",
+        "id": 1,
+        "image": "https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/2558_10152049125352244_910603040_n.jpg?oh=c5b20894d5a2ae7c72a9383927551fb4&oe=5989271F",
+        "name": "Bruno Mars"
+    }, {
+        "bio": "Coldplay are a British rock band formed in 1996 by lead vocalist and keyboardist Chris Martin and lead guitarist Jonny Buckland at University College London (UCL).[5] After they formed under the name Pectoralz, Guy Berryman joined the group as bassist and they changed their name to Starfish.[6] Will Champion joined as drummer and backing vocalist, completing the performing line-up. Creative Director Phil Harvey is often referred to as the official fifth member by the band.[7] The band renamed themselves Coldplay in 1998",
+        "id": 2,
+        "image": "https://cdn2.fatsoma.com/media/W1siZiIsInB1YmxpYy8yMDE3LzIvOC8xOS8zNS80Ni83MDEvQ29sZHBsYXktcHBjb3JuLTIwMTYuanBnIl1d",
+        "name": "Coldplay"
+    }, {
+        "bio": "Linkin Park is an American rock band from Agoura Hills, California. Formed in 1996, the band rose to international fame with their debut album Hybrid Theory (2000), which was certified diamond by the RIAA in 2005 and multi-platinum in several other countries",
+        "id": 3,
+        "image": "http://www.billboard.com/files/styles/article_main_image/public/media/linkin-park-billboard-650.jpg",
+        "name": "Linkin Park"
+    }, {
+        "id": 4,
+        "name": "Tyketto"
+    }, {
+        "id": 5,
+        "name": "Mallory Knox"
+    }],
+    "events": {
+        "0": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "04/05/2017",
+            "id": 0,
+            "numberofslots": 5,
+            "startTime": "21:13"
+        },
+        "1": {
+            "bands": [{
+                "id": 1
+            }, {
+                "id": 2
+            }, {
+                "id": 0
+            }],
+            "city": "Leeds",
+            "date": "30/05/2017",
+            "id": 1,
+            "numberofslots": 4,
+            "startTime": "19:06"
+        },
+        "2": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "bandsApplied": {
+                "id": "1"
+            },
+            "city": "Manchester",
+            "date": "30/04/2017",
+            "id": 2,
+            "numberofslots": 5,
+            "startTime": "23:06"
+        },
+        "3": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "18/05/2017",
+            "id": 3,
+            "numberofslots": 5,
+            "startTime": "21:51"
+        },
+        "4": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "bandsApplied": {
+                "id": "1"
+            },
+            "city": "York",
+            "date": "08/05/2017",
+            "id": 4,
+            "numberofslots": 5,
+            "startTime": "22:27"
+        },
+        "5": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "07/05/2017",
+            "id": 5,
+            "numberofslots": 5,
+            "startTime": "23:39"
+        },
+        "6": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "26/05/2017",
+            "id": 6,
+            "numberofslots": 5,
+            "startTime": "23:53"
+        },
+        "7": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "bandsApplied": {
+                "-Kjxw_M_v6sJb3oCPSRt": {
+                    "id": "rYsOt0NF81XXMgYoFhes2mojepu1"
+                },
+                "id": "rYsOt0NF81XXMgYoFhes2mojepu1"
+            },
+            "city": "Leeds",
+            "date": "27/04/2017",
+            "id": 7,
+            "numberofslots": 5,
+            "startTime": "21:48"
+        },
+        "8": {
+            "applied": false,
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "bandsApplied": {
+                "id": "rYsOt0NF81XXMgYoFhes2mojepu1"
+            },
+            "city": "Leeds",
+            "date": "26/04/2017",
+            "id": 8,
+            "numberofslots": 4,
+            "startTime": "20:12"
+        },
+        "9": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Leeds",
+            "date": "26/04/2017",
+            "id": 9,
+            "numberofslots": 4,
+            "startTime": "21:29"
+        },
+        "10": {
+            "bands": [{
+                "id": 4
+            }, {
+                "id": 2
+            }, {
+                "id": 3
+            }, {
+                "id": 5
+            }],
+            "city": "Manchester",
+            "date": "27/04/2017",
+            "id": 10,
+            "numberofslots": 5,
+            "startTime": "18:06"
+        },
+        "11": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "23/05/2017",
+            "id": 11,
+            "numberofslots": 5,
+            "startTime": "22:23"
+        },
+        "12": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "06/05/2017",
+            "id": 12,
+            "numberofslots": 6,
+            "startTime": "22:30"
+        },
+        "13": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "06/05/2017",
+            "id": 13,
+            "numberofslots": 5,
+            "startTime": "19:07"
+        },
+        "14": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "25/04/2017",
+            "id": 14,
+            "numberofslots": 4,
+            "startTime": "22:53"
+        },
+        "15": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "18/05/2017",
+            "id": 15,
+            "numberofslots": 5,
+            "startTime": "21:59"
+        },
+        "16": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "04/05/2017",
+            "id": 16,
+            "numberofslots": 5,
+            "startTime": "18:08"
+        },
+        "17": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "19/05/2017",
+            "id": 17,
+            "numberofslots": 5,
+            "startTime": "21:17"
+        },
+        "18": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "bandsApplied": {
+                "id": "edkw9vhczhVbCLHPh2Wjmwku2593"
+            },
+            "city": "Manchester",
+            "date": "04/05/2017",
+            "id": 18,
+            "numberofslots": 4,
+            "startTime": "22:29"
+        },
+        "19": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Leeds",
+            "date": "20/05/2017",
+            "id": 19,
+            "numberofslots": 5,
+            "startTime": "18:13"
+        },
+        "20": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Leeds",
+            "date": "19/05/2017",
+            "id": 20,
+            "numberofslots": 5,
+            "startTime": "20:38"
+        },
+        "21": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Leeds",
+            "date": "09/05/2017",
+            "id": 21,
+            "numberofslots": 4,
+            "startTime": "20:27"
+        },
+        "22": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "19/05/2017",
+            "id": 22,
+            "numberofslots": 5,
+            "startTime": "19:45"
+        },
+        "23": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "27/04/2017",
+            "id": 23,
+            "numberofslots": 4,
+            "startTime": "21:30"
+        },
+        "24": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "27/05/2017",
+            "id": 24,
+            "numberofslots": 5,
+            "startTime": "21:23"
+        },
+        "25": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "07/05/2017",
+            "id": 25,
+            "numberofslots": 5,
+            "startTime": "18:48"
+        },
+        "26": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "09/05/2017",
+            "id": 26,
+            "numberofslots": 5,
+            "startTime": "23:32"
+        },
+        "27": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "York",
+            "date": "15/05/2017",
+            "id": 27,
+            "numberofslots": 5,
+            "startTime": "18:48"
+        },
+        "28": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "03/05/2017",
+            "id": 28,
+            "numberofslots": 5,
+            "startTime": "22:06"
+        },
+        "29": {
+            "bands": [{
+                "id": 1,
+                "name": "Bruno Mars"
+            }, {
+                "id": 2,
+                "name": "Coldplay"
+            }, {
+                "id": 3,
+                "name": "Linkin Park"
+            }],
+            "city": "Manchester",
+            "date": "25/04/2017",
+            "id": 29,
+            "numberofslots": 5,
+            "startTime": "22:02"
+        },
+        "30": {
+            "bands": [{
+                "id": 0
+            }, {
+                "id": 2
+            }, {
+                "id": 1
+            }],
+            "city": "Manchester",
+            "date": "28/04/2017",
+            "id": 30,
+            "numberofslots": 5,
+            "startTime": "19:09"
+        },
+        "31": {
+            "bandsApplied": {
+                "id": "1"
+            },
+            "email": "example@example.com",
+            "id": "1"
+        },
+        "bandsApplied": {
+            "id": "edkw9vhczhVbCLHPh2Wjmwku2593"
+        }
+    },
+
+
+    "users": {
+        "1": {
+            "email": "mikegardner1996@gmail.com",
+            "id": "1"
+        },
+        "edkw9vhczhVbCLHPh2Wjmwku2593": {
+            "BandAccount": "True",
+            "PromotorAccount": "False",
+            "email": "hello@gmail.com"
+        },
+        "rYsOt0NF81XXMgYoFhes2mojepu1": {
+            "accountType": "Musician",
+            "email": "mikegardner1996@gmail.com"
+        }
+    }
+}

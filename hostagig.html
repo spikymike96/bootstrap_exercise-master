@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
+    <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
 </head>
 
 <body>
@@ -27,7 +29,8 @@
     <img src="images/venue.png" width="60%">
     <br>
     <!--  <a href="eventCreation.html"> -->
-    <button class="btn btn-default" onclick="loginCheck(eventCreation.html);">Create Event</button>
+    <button id="create" class="btn btn-default">
+        <a href="#"></a> Create Event</button>
     <!-- </a> -->
     <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
@@ -47,6 +50,7 @@
     <script src="JS/Lib/handlebars-v4.0.5.js "></script>
     <script src="JS/Lib/moment.js "></script>
     <script src="JS/main.js "></script>
+    <script src="JS/hostagig.js "></script>
 </body>
 
 </html>

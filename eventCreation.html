@@ -1,1 +1,66 @@
-ye
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gig For Days</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+    <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="getgigging.html">Get Gigging</a></li>
+                <li class="active"><a href="hostagig.html">Host a Gig</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li id="profileBtn"><a href="profile.html">Profile</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h1> Enter the deets of the gig</h1>
+    <p>Things you'd want entering..... Date, Start Time, City, Venue (maybe just address for both), terms, time acts have to be there for</p>
+    <div class="container">
+        <br> City:
+        <input id="city" type="text" placeholder="e.g London">
+        <br> Venue:
+        <input id="venue" type="text" placeholder="e.g Koko">
+        <br> Date:
+        <input id="date" type="text" placeholder="DD/MM/YYY">
+        <br> Time:
+        <input id="time" type="text" value="19:00">
+        <br> Number of slots
+        <input id="slots" type="text" value="4">
+        <br>
+        <button id="create" class="btn btn-default">
+            Create Event</button>
+    </div>
+    <!--  <a href="eventCreation.html"> -->
+    <!-- </a> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js " integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin=" anonymous "></script>
+    <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCl0n3pakWK8hUJBlTS-U2_-x-CJbyaUC8",
+        authDomain: "project-1-746a9.firebaseapp.com",
+        databaseURL: "https://project-1-746a9.firebaseio.com",
+        projectId: "project-1-746a9",
+        storageBucket: "project-1-746a9.appspot.com",
+        messagingSenderId: "431681120406"
+    };
+    firebase.initializeApp(config);
+    </script>
+    <script src="bootstrap/js/bootstrap.js "></script>
+    <script src="JS/Lib/handlebars-v4.0.5.js "></script>
+    <script src="JS/Lib/moment.js "></script>
+    <script src="JS/main.js "></script>
+</body>
+
+</html>
