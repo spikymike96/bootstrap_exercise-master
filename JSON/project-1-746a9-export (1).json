@@ -565,16 +565,6 @@
             "id": 30,
             "numberofslots": 5,
             "startTime": "19:09"
-        },
-        "31": {
-            "bandsApplied": {
-                "id": "1"
-            },
-            "email": "example@example.com",
-            "id": "1"
-        },
-        "bandsApplied": {
-            "id": "edkw9vhczhVbCLHPh2Wjmwku2593"
         }
     },
 

@@ -12,7 +12,7 @@ function submit() {
 
     const refOb = firebase.database().ref("users/" + user.uid);
 
-    dbRefObject.set({
+    dbRefObject.push({
         id: user.uid
     });
 
@@ -23,6 +23,18 @@ function submit() {
     refOb.on('value', snap => {
         console.log(snap.val().email);
     });
+
+    var user = firebase.auth().currentUser;
+    if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        emailVerified = user.emailVerified;
+        uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+        // this value to authenticate with your backend server, if
+        // you have one. Use User.getToken() instead.
+        console.log(user);
+    }
 
     // firebase.auth().onAuthStateChanged(function(user) {
     //     if (user) {
@@ -56,17 +68,7 @@ function submit() {
     //     }
     // });
 
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-        console.log(user);
-    }
+
 
 
 

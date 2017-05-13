@@ -1,4 +1,5 @@
 var cities = []; //an array for the selected cities to be stored in
+var eventsLol = [];
 
 function isInArray(value, array) { //checks if element is in array
     return array.indexOf(value) > -1;
@@ -20,12 +21,13 @@ function submit() {
     var startDate = moment(from.value, "YYYY-MM-DD");
     var endDate = moment(until.value, "YYYY-MM-DD");
 
-    var firebaseRef = firebase.database().ref();
-    //create references
-    const dbRefObject = firebase.database().ref().child('events');
-    //sync object changes
+    //var firebaseRef = firebase.database().ref();
+    const dbRefObject = firebase.database().ref("events/");
+
     dbRefObject.on('value', snap => {
-        console.log(snap.val());
+        console.log(snap.val().length);
+        eventsLol.push(snap.val());
+        //console.log(eventsLol).length;
 
         var filtered = snap.val().filter(function(item) { //item is one of the values of 'data' e.g data[0]
             var date = moment(item.date, "DD/MM/YYYY"); //save the date of a gig
@@ -34,10 +36,11 @@ function submit() {
                 (date.isBetween(startDate, endDate)) //is the date of gig inbetween the start and end date?
             );
         });
-        console.log(filtered); //new filtered array
-        var eventNo = filtered.length;
-        swal("Nice, there are " + filtered.length + " available events!");
 
+        // console.log(filtered); //new filtered array
+        //var eventNo = filtered.length;
+        swal("Nice, there are " + filtered.length + " available events!");
+        //events.set(snap.val());
         events.set(filtered);
     });
 
@@ -48,9 +51,6 @@ var search = (function() {
 
 })();
 
-function eventPage() {
-
-}
 
 var events = (function() {
     var eventsArray = []; //self contained array, events.set(filtered) passes our filtered array in
