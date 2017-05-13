@@ -6,7 +6,7 @@ function publishEvent() {
     var date = document.getElementById('date').value;
     var time = document.getElementById('time').value;
     var slots = document.getElementById('slots').value;
-    const RefObject = firebase.database().ref("events/");
+    var RefObject = firebase.database().ref("events/");
     var user = firebase.auth().currentUser;
     RefObject.push({
         // eventCreator: user.uid,

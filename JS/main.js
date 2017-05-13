@@ -401,7 +401,7 @@ function cmon() { //
     //var firebaseRef = firebase.database().ref('users/' + 1);
     var user = firebase.auth().currentUser;
     console.log(user.uid);
-    const dbRefObject = firebase.database().ref("users/" + user.uid);
+    var dbRefObject = firebase.database().ref("users/" + user.uid);
     // //sync object changes
     dbRefObject.on('value', snap => {
         console.log(snap.val());

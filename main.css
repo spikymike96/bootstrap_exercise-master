@@ -2,9 +2,18 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.center {
+    text-align: center;
+}
+
 #parameters {
     padding: 5px;
     background-color: #edeff2;
+}
+
+.nav {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 #output {

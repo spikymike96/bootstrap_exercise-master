@@ -22,7 +22,7 @@ function submit() {
     var endDate = moment(until.value, "YYYY-MM-DD");
 
     //var firebaseRef = firebase.database().ref();
-    const dbRefObject = firebase.database().ref("events/");
+    var dbRefObject = firebase.database().ref("events/");
 
     dbRefObject.on('value', snap => {
         console.log(snap.val().length);

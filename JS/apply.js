@@ -5,21 +5,17 @@ function submit() {
 
     //var firebaseRef = firebase.database().ref('users/' + 1);
 
-    const dbRefObject = firebase.database().ref("events/" + eventId + "/bandsApplied/");
+    var dbRefObject = firebase.database().ref("events/" + eventId + "/bandsApplied/");
     // //sync object changes
-
+    dbRefObject.on('value', snap => {
+        console.log(snap.val());
+    });
     var user = firebase.auth().currentUser;
-
-    const refOb = firebase.database().ref("users/" + user.uid);
-
     dbRefObject.push({
         id: user.uid
     });
 
-    dbRefObject.on('value', snap => {
-        console.log(snap.val());
-    });
-
+    var refOb = firebase.database().ref("users/" + user.uid);
     refOb.on('value', snap => {
         console.log(snap.val().email);
     });
@@ -69,12 +65,19 @@ function submit() {
     // });
 
 
+    swal({
+        title: 'You have successfully applied for this event!',
+        text: 'You will hear back from the promoter soon',
+        type: 'success'
+    }).then(
+        function() {
+            window.open("profile.html", '_self', false);
+        },
+        // handling the promise rejection
+        function(dismiss) {
 
-
-
-    swal(
-        'You have successfully applied for this event!',
-        "You will hear back from the promoter soon",
-        'success'
+        }
     )
+
+
 }

@@ -49,7 +49,7 @@ var eventId = window.location.hash.substr(1); //theIDofthepage after the rest of
 
 var firebaseRef = firebase.database().ref();
 //create references
-const dbRefObject = firebase.database().ref().child('events').child(eventId);
+var dbRefObject = firebase.database().ref().child('events').child(eventId);
 // //sync object changes
 dbRefObject.on('value', snap => {
     eventModule.set(snap.val());
