@@ -404,7 +404,8 @@ function cmon() { //
     var dbRefObject = firebase.database().ref("users/" + user.uid);
     // //sync object changes
     dbRefObject.on('value', snap => {
-        console.log(snap.val());
+        console.log(snap.val().accountType);
+        console.log(snap.val().email);
     });
 
     // //firebaseRef.push("users").set("push");
@@ -414,16 +415,17 @@ function cmon() { //
     // });
 
 
-    if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-        //console.log(user);
-    }
+    // if (user != null) {
+    //     name = user.displayName;
+    //     email = user.email;
+    //     photoUrl = user.photoURL;
+    //     emailVerified = user.emailVerified;
+    //     uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+    //     // this value to authenticate with your backend server, if
+    //     // you have one. Use User.getToken() instead.
+    //     //console.log(user);
+    // }
+
 
 }
 

@@ -9,9 +9,9 @@ function publishEvent() {
     var RefObject = firebase.database().ref("events/");
     var user = firebase.auth().currentUser;
     RefObject.push({
-        // eventCreator: user.uid,
+        eventCreator: user.uid,
         city: city,
-        // venue: venue,
+        venue: venue,
         date: date,
         startTime: time,
         numberofslots: slots,
