@@ -9,6 +9,7 @@ function publishEvent() {
     var user = firebase.auth().currentUser;
     var RefObject = firebase.database().ref("events/");
     var UserRefObject = firebase.database().ref("users/" + user.uid + "/eventsOwned");
+
     RefObject.push({
         eventCreator: user.uid,
         city: city,
@@ -16,7 +17,6 @@ function publishEvent() {
         date: date,
         startTime: time,
         numberofslots: slots,
-        id: 31,
         bands: [{
             id: 1
         }, {
@@ -24,8 +24,6 @@ function publishEvent() {
         }, {
             id: 0
         }]
-
-
     });
 
     UserRefObject.push({
