@@ -25,25 +25,29 @@
             </ul>
         </div>
     </nav>
-    <img src="images/crowd8v2.jpg" width="100%">
-    <h3 class="center">Select where you want to play and when</h3>
-    <div id="parameters" class="container center">
-        <form action="">
-            <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)"> Manchester
-            <input type="checkbox" name="city" value="York" onchange="doalert(this.value)"> York
-            <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)"> Leeds
-        </form>
-        <form action="fromdatepicker">
-            From:
-            <input id="from" type="date" name="from">
-        </form>
-        <form action="untildatepicker">
-            Until:
-            <input id="until" type="date" name="until">
-        </form>
-        <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
+    <div class="container center">
+        <img src="images/crowd8v2.jpg" width="100%">
+        <h3 class="center">Select where you want to play and when: </h3>
+        <div id="parameters" class="container center">
+            <div id="checkboxes">
+                <input type="checkbox" name="city" value="Manchester" onchange="doalert(this.value)"> Manchester
+                <input type="checkbox" name="city" value="York" onchange="doalert(this.value)"> York
+                <input type="checkbox" name="city" value="Leeds" onchange="doalert(this.value)"> Leeds
+            </div>
+            <div id="datePicker">
+                <form action="fromdatepicker">
+                    From:
+                    <input id="from" type="date" name="from">
+                </form>
+                <form action="untildatepicker">
+                    Until:
+                    <input id="until" type="date" name="until">
+                </form>
+            </div>
+            <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
+        </div>
+        <p> Events that fit your criteria will appear here: </p>
     </div>
-    <p> Events that fit your criteria will appear here: </p>
     <div id="output">
         <div id="insert-events"></div>
         <!-- empty div for the template to be placed into -->

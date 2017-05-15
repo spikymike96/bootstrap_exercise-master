@@ -3,18 +3,21 @@ function publishEvent() {
     alert(city);
 
     var venue = document.getElementById('venue').value;
-    var date = document.getElementById('date').value;
+    var dateText = document.getElementById('dateText').value;
     var time = document.getElementById('time').value;
     var slots = document.getElementById('slots').value;
     var user = firebase.auth().currentUser;
     var RefObject = firebase.database().ref("events/");
     var UserRefObject = firebase.database().ref("users/" + user.uid + "/eventsOwned");
 
+    //var date = moment(dateInput.value, "DD/MM/YYYY");
+    console.log(date);
+
     RefObject.push({
         eventCreator: user.uid,
         city: city,
         venue: venue,
-        date: date,
+        date: dateText,
         startTime: time,
         numberofslots: slots,
         bands: [{
