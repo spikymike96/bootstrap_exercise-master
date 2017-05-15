@@ -25,11 +25,30 @@ function submit() {
     var dbRefObject = firebase.database().ref("events/");
 
     dbRefObject.on('value', snap => {
-        console.log(snap.val().length);
+        //console.log(snap.val().length);
         eventsLol.push(snap.val());
         //console.log(eventsLol).length;
+        //console.log(snap.val());
 
-        var filtered = snap.val().filter(function(item) { //item is one of the values of 'data' e.g data[0]
+        var arr = [];
+        var obj = snap.val();
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                arr.push(Object.assign({}, obj[key], { id: key }));
+            }
+        };
+        // var result = arr.join(',');
+        console.log(arr);
+
+        // var array = $.map(snap.val(), function(value, index) {
+        //     //console.log(Object.keys(value));
+        //     console.log(value.key);
+        //     return [value];
+
+        // });
+        // console.log(array);
+
+        var filtered = arr.filter(function(item) { //item is one of the values of 'data' e.g data[0]
             var date = moment(item.date, "DD/MM/YYYY"); //save the date of a gig
             return (
                 isInArray(item.city, cities) && //is the city in the city array?

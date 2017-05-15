@@ -33,7 +33,7 @@ function publishEvent() {
     })
 
     //var name = snapshot.name();
-    console.log(key);
+    // console.log(key);
 
 
 
