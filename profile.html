@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/profile.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
@@ -25,11 +26,21 @@
             </ul>
         </div>
     </nav>
-    <h1> Your Profile </h1>
-    <p id="userEmail"> </p>
-    <p id="accountTypeVariable"> </p>
-    <button type="button" class="btn btn-default" onclick="EUGH()">Submit</button>
-    <!-- <img src="https://designbump.com/wp-content/uploads/2012/11/user-profile-inspiration-002.jpg" width="100%"> -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="EUGH()">Edit Profile</a>
+        <a href="#">Upcoming Events</a>
+        <a href="#">Offers & Requests</a>
+        <a href="#">Requests</a>
+    </div>
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Profile menu</span>
+        <img src="images/crowd7v2.jpg" width="100%">
+        <h1> Your Profile </h1>
+        <p id="userEmail"> </p>
+        <p id="accountTypeVariable"> </p>
+        <button type="button" class="btn btn-default" onclick="EUGH()">Submit</button>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -47,6 +58,21 @@
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="JS/main.js "></script>
     <script src="JS/profile.js "></script>
+</body>
+<!-- </html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+    </script>
 </body>
 
 </html>

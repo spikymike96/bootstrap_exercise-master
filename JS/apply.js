@@ -4,15 +4,21 @@ function submit() {
 
 
     //var firebaseRef = firebase.database().ref('users/' + 1);
-
+    var user = firebase.auth().currentUser;
     var dbRefObject = firebase.database().ref("events/" + eventId + "/bandsApplied/");
+    var UserRefObject = firebase.database().ref("users/" + user.uid + "/eventsAppliedFor");
+
     // //sync object changes
     dbRefObject.on('value', snap => {
         console.log(snap.val());
     });
-    var user = firebase.auth().currentUser;
+
     dbRefObject.push({
         id: user.uid
+    });
+
+    UserRefObject.push({
+        id: eventId
     });
 
     var refOb = firebase.database().ref("users/" + user.uid);
@@ -20,17 +26,18 @@ function submit() {
         console.log(snap.val().email);
     });
 
-    var user = firebase.auth().currentUser;
-    if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
-        uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getToken() instead.
-        console.log(user);
-    }
+    // var user = firebase.auth().currentUser;
+    // if (user != null) {
+    //     name = user.displayName;
+    //     email = user.email;
+    //     photoUrl = user.photoURL;
+    //     emailVerified = user.emailVerified;
+    //     uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
+    //     // this value to authenticate with your backend server, if
+    //     // you have one. Use User.getToken() instead.
+    //     console.log(user);
+    // }
+
 
     // firebase.auth().onAuthStateChanged(function(user) {
     //     if (user) {
