@@ -19,12 +19,13 @@
 
          //console.log(filtered.bands)
      });
+     closeNav();
 
  }
 
  function openNav() {
-     document.getElementById("mySidenav").style.width = "250px";
-     document.getElementById("main").style.marginLeft = "250px";
+     document.getElementById("mySidenav").style.width = "380px";
+     document.getElementById("main").style.marginLeft = "380px";
  }
 
  function closeNav() {
