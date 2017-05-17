@@ -396,6 +396,8 @@
 //     "name": "Mallory Knox",
 // }];
 
+
+
 function cmon() { // 
     alert("this button does NOTHING! muahahahahah sucks to be you!!!");
     //var firebaseRef = firebase.database().ref('users/' + 1);
@@ -403,7 +405,7 @@ function cmon() { //
     console.log(user.uid);
     var dbRefObject = firebase.database().ref("users/" + user.uid);
     // //sync object changes
-    dbRefObject.on('value', snap => {
+    dbRefObject.on('value', function(snap) {
         console.log(snap.val().accountType);
         console.log(snap.val().email);
     });
@@ -413,20 +415,6 @@ function cmon() { //
     //     id: "1",
     //     email: "example@example.com"
     // });
-
-
-    // if (user != null) {
-    //     name = user.displayName;
-    //     email = user.email;
-    //     photoUrl = user.photoURL;
-    //     emailVerified = user.emailVerified;
-    //     uid = user.uid; // The user's ID, unique to the Firebase project. Do NOT use
-    //     // this value to authenticate with your backend server, if
-    //     // you have one. Use User.getToken() instead.
-    //     //console.log(user);
-    // }
-
-
 }
 
 function loginCheck(hello) {
@@ -462,6 +450,9 @@ function loginCheck(hello) {
                     }).then(function(password) {
                         inputtedPassword = password;
                         console.log(inputtedPassword);
+                        if (password.length < 6) {
+
+                        }
                         if (password) {
                             swal({
                                 type: 'success',
@@ -470,9 +461,14 @@ function loginCheck(hello) {
                         }
 
                         const promise = auth.signInWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                        promise.catch(e => console.log(e.message + "Incorrect Email & Password Combo"));
+                        promise.catch(function(e) {
+                            swal({
+                                title: 'Mate',
+                                text: e.message,
+                                type: 'warning'
 
-
+                            })
+                        });
                     })
 
                 })
@@ -501,7 +497,14 @@ function loginCheck(hello) {
                                 })
                             }
                             const promise = auth.createUserWithEmailAndPassword(inputtedEmail, inputtedPassword);
-                            promise.catch(e => console.log(e.message + "nooooo"));
+                            promise.catch(function(e) {
+                                swal({
+                                    title: 'Mate',
+                                    text: e.message,
+                                    type: 'warning'
+
+                                })
+                            });
                         })
                     })
 

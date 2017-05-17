@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="CSS/eventCreation.css">
     <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -25,27 +26,35 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <h1> Enter the deets of the gig</h1>
+    <div id="input" class="container">
+        <h1> Event Details</h1>
         <p>Things you'd want entering..... Date, Start Time, City, Venue (maybe just address for both), terms, time acts have to be there for</p>
+        <hr> Event Name:
+        <br>
+        <input id="name" type="text" placeholder="e.g Summer Fest 2017">
         <br> City:
+        <br>
         <input id="city" type="text" placeholder="e.g London">
         <br> Venue:
+        <br>
         <input id="venue" type="text" placeholder="e.g Koko">
         <br> Date:
+        <br>
         <input id="dateText" type="text" placeholder="DD/MM/YYY">
-        <!-- <input id="dateInput" type="date">
- -->
         <br> Start Time:
+        <br>
         <input id="time" type="text" value="19:00">
-        <br> Number of slots
+        <br> Number of slots:
+        <br>
         <input id="slots" type="text" value="4">
-        <br> Terms and Extra Information
+        <br> Event Description:
         <br>
-        <input id="terms" type="text" width="600px" placeholder="specify the exact criteria for taking part in your event.
-        What Time is load in? What will be provided for the band?">
+        <input id="eventDescription" type="text" width="600px" placeholder="Sell the event! Describe the acts playing, why should people come down and get involved?">
+        <br> Terms and Extra Information:
         <br>
-        <button id="create" class="btn btn-default" onclick="publishEvent()">
+        <input id="terms" type="text" width="600px" placeholder="Specify the exact criteria for taking part in your event. What Time is load in? What will be provided for the band? etc.">
+        <br>
+        <button id="create" class="btn btn-success" onclick="publishEvent()">
             Create Event</button>
     </div>
     <!--  <a href="eventCreation.html"> -->

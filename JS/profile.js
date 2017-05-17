@@ -25,27 +25,26 @@
  })();
 
 
- var eventModule = (function() {
-     // var eventObject = {}; //self contained array, events.set(filtered) passes our filtered array in
+ var eventsModule = (function() {
+     var eventsArray = []; //self contained array, events.set(filtered) passes our filtered array in
 
-     // // cache DOM
-     // var $el = $('#eventInfo'); //the area where the info is gonna be displayed
-     // var $insert = $el.find('#insert-event'); //
-     // var template = Handlebars.compile($el.find('#event-template').html()); //the template the html adheres to
+     // cache DOM
+     var $events = $el.find('#output'); //the area where the info is gonna be displayed
+     var $insert = $events.find('#insert-events'); //
+     var template = Handlebars.compile($events.find('#events-template').html()); //the template the html adheres to
 
-     // // bind events
-     // function render() {
-     //     $insert.html(template(eventObject)); //inserts into template, in {{#each this}} it is THIS
-     // }
+     // bind events
+     function render() {
+         $insert.html(template(eventsArray)); //inserts into template, in {{#each this}} it is THIS
+     }
 
-     // function setEvent(data) {
-     //     eventObject = data; //events array become the filtered array
-     //     eventObject.slotsLeft = eventObject.numberofslots - eventObject.bands.length;
-     //     render();
-     // }
-     // return {
-     //     set: setEvent //filtered into setEvents^
-     // };
+     function setEvents(data) {
+         eventsArray = data; //events array become the filtered array
+         render();
+     }
+     return {
+         set: setEvents //filtered into setEvents^
+     };
  })();
 
 
@@ -55,6 +54,7 @@
 
  function EUGH() {
      var user = firebase.auth().currentUser;
+     console.log(user);
      var refObj = firebase.database().ref("users/" + user.uid);
 
      refObj.on('value', snap => {
@@ -66,6 +66,15 @@
          }
      });
 
+
+     closeNav();
+
+ }
+
+ function offers() {
+     var user = firebase.auth().currentUser;
+     //dispAnything.innerText = events[0].bands;
+
      var eventRef = firebase.database().ref("events/");
      eventRef.on("value", function(snapshot) {
          var events = [];
@@ -75,7 +84,7 @@
              // var qty = childSnapshot.val();
              var { eventCreator } = childSnapshot.val();
              if (eventCreator == user.uid) {
-                 console.log(childSnapshot.val())
+                 console.log(childSnapshot.val().bandsApplied)
                  events.push(childSnapshot.val());
              }
              //eventCreator == user.uid && events.push(childSnapshot.val());
@@ -85,16 +94,12 @@
              //     var city = snapshot.val()
 
              // });
+             eventsModule.set(events);
+             console.log(events.bandsApplied);
 
          });
          dispAnything.innerText = events[0].bands[0].id;
      });
-     closeNav();
-
- }
-
- function offers() {
-     //dispAnything.innerText = events[0].bands;
      closeNav();
  }
 

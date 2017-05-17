@@ -1,0 +1,38 @@
+#datePicker {
+    padding-bottom: 20px;
+}
+
+#insert-events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+}
+
+#output {
+    background-color: #1e1e1e;
+    padding: 5px;
+}
+
+.flex-item {
+    background-color: #2d2b2c;
+    padding: 5px;
+    width: 400px;
+    height: 150px;
+    margin: 10px 5px 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flex-item:hover {
+    border: 1px solid white;
+}
+
+.flex-item-header {}
+
+a:hover {
+    color: #e56649;
+    font-weight: bold;
+}

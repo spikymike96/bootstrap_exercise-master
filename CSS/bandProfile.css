@@ -1,0 +1,12 @@
+#bandName {
+    text-align: center;
+}
+
+#bandImage {
+    width: 100%;
+    padding-bottom: 1em;
+}
+
+#bandBio {
+    word-wrap: break-word;
+}

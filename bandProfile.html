@@ -3,9 +3,12 @@
 
 <head>
     <title>Gig For Days</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/music-player.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/bandProfile.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -23,21 +26,19 @@
         </div>
     </nav>
     </div>
-    <p> A page to show off the band. A bio, images social media links, sound files etc. </p>
     <div id="bandProfile">
-        <div id="insert-bandInfo"></div>
+        <div id="insert-bandInfo" class="container"></div>
         <script id="bandInfo-template" type="text/template">
-            <h1>{{name}}</h1>
-            <p>{{bio}} </p>
+            <h1 id="bandName">{{name}}</h1>
+            <p id="bandBio">{{bio}} </p>
+            <br>
+            <img src={{image}} id="bandImage">
             <audio controls>
                 <source src="music/waterworks.mp3" type="audio/mpeg"> Your browser does not support the audio element.
             </audio>
-            <br>
-            <img src={{image}}>
             <!-- from $insert.html(template(eventsArray)); in render function-->
         </script>
     </div>
-    <h1 id="object">hello</h1>
     <!-- SCRIPTS
  -->
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>

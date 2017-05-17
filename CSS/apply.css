@@ -1,0 +1,18 @@
+#terms {
+    height: 420px;
+    width: 70%;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#topInfo {
+    text-align: center;
+}
+
+#readAndAccept {
+    text-align: center;
+}

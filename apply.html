@@ -3,9 +3,11 @@
 
 <head>
     <title>Gig For Days</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/music-player.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/apply.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
@@ -25,12 +27,28 @@
             </ul>
         </div>
     </nav>
-    <p> A page where the musician reviews the terms set by the promoter. If they accept, they are able to apply for the event and the promoter can choose whether or not to put them on </p>
-    <div style="height:420px;width:800px;border:1px solid #ccc;font:16px/26px; overflow:auto;">
-        <h1> Conditions for the gig:</h1> exampleexampleexample exampleexampleexampleexampleexampleexampleexampleexample exampleexampleexampleexampleexampleexampleexampleexampleexa mpleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamp leexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplee xampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplexampleexampleexampleexampleexampleexampleexampleexample exampleexampleexampleexampleexampleexampleexampleexampleexa mpleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamp leexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplee xampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplexampleexampleexampleexampleexampleexampleexampleexample exampleexampleexampleexampleexampleexampleexampleexampleexa mpleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamp leexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplee xampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplexampleexampleexampleexampleexampleexampleexampleexample exampleexampleexampleexampleexampleexampleexampleexampleexa mpleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamp leexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplee xampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplexampleexampleexampleexampleexampleexampleexampleexample exampleexampleexampleexampleexampleexampleexampleexampleexa mpleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamp leexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexamplee xampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleex ampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexample
+    <div id="topInfo" class="container">
+        <h3> Before you apply, make sure you read through the exact terms and conditions set by the event promoter. </h3>
+        <p> 'Gig For Days' aims to match musicians and promoters who will genuinely enjoy working together!</p>
     </div>
-    <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
-    <p> once submitted, the promoter can accept their request </p>
+    <hr>
+    <div id="readAndAccept" class="container">
+        <div id="terms">
+            <h1> Conditions for the gig:</h1>
+            <p>THE SHOW: We are extremely excited to be giving you the opportunity to play the highest profile venue of this size (450 capacity) in the North, and to play on the same stage where so many successful bands have started out.
+                <br>
+                <br> All bands playing the gig will get: - FOH engineer, monitor engineer, backstage dressing room, official tickets and usually a lighting engineer. - A feature on their website, featuring a photo, brief write up (for headlining band) and link to your band’s website. (www.manchesteracademy.net receives 30,000 hits per month!) -Your gig will be featured with other Manchester Academy shows on 25,000 Gig Guides, in all local listings and advertisements. Your band name will be featured alongside all the other touring bands currently playing the venue.
+                <br>
+                <br>TICKETS / PAYMENT: However, with a service and venue like this, the only way we can make this type of show economically viable is for all bands to take the event seriously and professionally and sell tickets in advance. If you do this, you stand to make some decent money on the show. You will be posted out tickets (normally 100) which you should sell to your fans for £6. It will be £7 on the door. A condition of confirming this gig is that you agree to selling a minimum of 50 tickets. Your payment for selling these 50 tickets at £6 will be £100. For ease of organisation please can we collect the surplus £200 off you AT SOUNDCHECK BEFORE 6PM. Any extra tickets you sell after this you will keep £3 payment for. So if you sell 100 tickets, you receive £250 payment. NO TICKETS ARE TO BE SOLD ON THE NIGHT OF THE EVENT. We advise you not to give any tickets out, without getting the money off fans first as lost tickets can cause confusion on the night.
+                <br>
+                <br> ITINERARY: LOAD IN: When you arrive at the Academy load in round the back near the main Academy. Tell the attendant you are playing at Academy and he will let you in.
+                <br>
+                <br> EQUIPMENT: We normally like one band (normally the last band) to supply a skeleton drum kit and bass amp for the evening. All bands should bring snare, cymbals, drum pedals, drum stands , guitar amps. Also a backup bass amp would be useful. We do not normally organise guitar cabs, however, we can try to help with this if requested.
+                <br>
+                <br> TECHNICAL SPECIFICATIONS: If you have any specific technical requirements please email these to me and we will forward them onto the sound engineer.</p>
+        </div>
+        <button type="button" class="btn btn-success" onclick="submit()">Submit</button>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
     <script>
     // Initialize Firebase

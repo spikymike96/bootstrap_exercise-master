@@ -2,6 +2,22 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+
+/*
+Overriding Bootstrap*/
+
+#insert-event {
+    word-wrap: break-word;
+}
+
+#bandsPlaying {
+    padding-bottom: 3em;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
 .center {
     text-align: center;
 }
@@ -15,72 +31,9 @@
     margin-bottom: 0px;
 }
 
-#output {
-    background-color: #1e1e1e;
-    padding: 5px;
-}
-
-#insert-bands {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: center;
-}
-
-#insert-events {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: stretch;
-    align-content: center;
-}
-
-.flex-item {
-    background-color: #2d2b2c;
-    padding: 5px;
-    width: 400px;
-    height: 250px;
-    margin: 10px 5px 0;
-    color: white;
-    font-weight: bold;
-}
-
 a:hover {
     color: #e56649;
     font-weight: bold;
-}
-
-.band-flex-item {
-    background-color: #6bd2e0;
-    /*border-style: solid;
-*/
-    width: 200px;
-    height: 100px;
-    margin: 10px 5px 0;
-    color: white;
-    font-weight: bold;
-    background-image: images/me.jpg;
-}
-
-.apply-flex-item {
-    background-color: tomato;
-    /*border-style: solid;
-*/
-    width: 200px;
-    height: 100px;
-    margin: 10px 5px 0;
-    color: white;
-    font-weight: bold;
-    background-image: images/me.jpg;
-}
-
-.flex-item:hover {
-    border: 1px solid white;
-}
-
-.flex-item-header {
-    text-align: center;
 }
 
 

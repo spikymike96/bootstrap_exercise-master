@@ -3,6 +3,7 @@
 
 <head>
     <title>Gig For Days</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/music-player.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
@@ -37,6 +38,91 @@
         <div id="main">
             <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Profile menu</span>
             <img src="images/crowd7v2.jpg" width="100%">
+            <!-- <div id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingTwo">
+                        <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Collapsible Group Item #2
+        </a>
+      </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="card-block">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingThree">
+                        <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="card-block">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div>
+                <!-- empty div for the template to be placed into -->
+                <script id="events-template" type="text/template">
+                    {{#unless this}} {{/unless}} {{#each this}} {{/each}}
+                </script>
+            </div>
+            <div id="output" class="container">
+                <div id="insert-events"></div>
+                <script id="events-template" type="text/template">
+                    {{#each this}}
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion"  href="#collapse{{@key}}"><span class="glyphicon glyphicon-th">
+                            </span>{{city}} {{date}} </a>
+                        </h4>
+                                    </div>
+                                    <div id="collapse{{@key}}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr>
+                                                    <td>
+                                                        {{#each bandsApplied}}
+                                                        <p>{{this.id}}</p>
+                                                        {{/each}}
+                                                        <!-- <a href="http://www.jquery2dotnet.com">Orders</a> <span class="label label-success">$ 320</span> -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
             <h1> Your Profile </h1>
             <p id="userEmail"> </p>
             <p id="accountTypeVariable"> </p>
@@ -58,24 +144,8 @@
     firebase.initializeApp(config);
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="JS/Lib/handlebars-v4.0.5.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="JS/main.js "></script>
     <script src="JS/profile.js "></script>
 </body>
-<!-- </html> -->
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="stylesheet" href="main.css">
-    <style>
-
-    </style>
-</head>
-
-<body>
-    <script>
-    </script>
-</body>
-
-</html>

@@ -1,5 +1,7 @@
 var cities = []; //an array for the selected cities to be stored in
 var eventsLol = [];
+//document.getElementById("imageId").src = "images/crowd3.jpg";
+
 
 function isInArray(value, array) { //checks if element is in array
     return array.indexOf(value) > -1;
@@ -39,6 +41,7 @@ function submit() {
         };
         // var result = arr.join(',');
         console.log(arr);
+        console.log("hmm");
 
         // var array = $.map(snap.val(), function(value, index) {
         //     //console.log(Object.keys(value));
@@ -56,11 +59,36 @@ function submit() {
             );
         });
 
-        // console.log(filtered); //new filtered array
+        console.log(filtered.length); //new filtered array
         //var eventNo = filtered.length;
-        swal("Nice, there are " + filtered.length + " available events!");
+        if (filtered.length > 1) {
+            //swal("Nice, there are " + filtered.length + " available events!");
+            swal({
+                title: 'Nice!',
+                text: "There are " + filtered.length + " available events fitting your criteria!",
+            })
+
+        } else if (filtered.length == 1) {
+            //swal("Nice, there is " + filtered.length + " available event!");
+            swal({
+                title: 'Nice!',
+                text: "There is " + filtered.length + " available event fitting your criteria!",
+                type: 'warning'
+            })
+        } else {
+            swal("Unfortunatly there are currently no available events that fit your criteria... Please try again!");
+            swal({
+                title: 'Uh oh..',
+                text: "Unfortunatly there are currently no available events that fit your criteria... Please try again!",
+                type: 'warning'
+            })
+        }
+
         //events.set(snap.val());
+
         events.set(filtered);
+        //$("#imageId").attr('src', 'images/crowd3.jpg');
+
     });
 
     // events.set(filtered);
@@ -94,6 +122,9 @@ var events = (function() {
     };
 })();
 
+$('#profileBtn').on('click', function() {
+    loginCheck("profile.html")
+});
 
 
 

@@ -1,0 +1,42 @@
+.band-flex-item {
+    background-color: #6bd2e0;
+    /*border-style: solid;
+*/
+    width: 200px;
+    height: 100px;
+    margin: 10px 5px 0;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.apply-flex-item {
+    background-color: tomato;
+    /*border-style: solid;
+*/
+    width: 200px;
+    height: 100px;
+    margin: 10px 5px 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#insert-bands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: center;
+}
+
+a:hover {
+    color: white;
+}
+
+.flex-item-apply {
+    font-size: 20px;
+}

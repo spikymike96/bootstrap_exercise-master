@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="CSS/event.css">
     <script src="JS/Lib/sweetalert2/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="JS/Lib/sweetalert2/sweetalert2.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -25,23 +27,26 @@
         </div>
     </nav>
     </div>
-    <h1 id="object">hello</h1>
     <div id="eventInfo">
         <div id="insert-event"></div>
         <!-- empty div for the template to be placed into -->
         <script id="event-template" type="text/template">
             <!-- from $insert.html(template(eventsArray)); in render function-->
-            <div value="{{id}}">
-                <h1> yo </h1>
+            <div class="container">
+                <h1 class="center"> SPIKYMIKE FEST 2017 </h1>
                 <p> Date: {{date}} </p>
-                <p> {{city}} </p>
-                <p> {{venue}} </p>
+                <p> {{venue}}, {{city}} </p>
+                <p> </p>
                 <p> Time: {{startTime}} </p>
-                <h3> there are {{slotsLeft}} slots available for this gig </h3>
+                <hr>
+                <p> Hailing from Calgary, Canada, Lab Coast are a lo-fi rock outfit celebrating their recent LP release with PPY favourite label Faux Discs by doing a massive ol' tour round the UK and EU, and Please Please You and Odd Horizon are lucky enough to be co-hosting them at The Basement in York. "Insistent dreamy pop with jangling guitars, distorted vocals and pretty melodies are the order of the day... swoon-worthy" - Line of Best Fit Joining for support will be the plucky, grungey pop two piece Bad Idea, and fuzzy bedroom rock genius Weather Balloons. </p>
+                <hr>
+                <h4> Number of available slots: {{slotsLeft}}</h4>
+                <h2> Acts: </h2>
             </div>
         </script>
     </div>
-    <div id="bandsPlaying">
+    <div id="bandsPlaying" class="container">
         <div id="insert-bands"></div>
         <script id="band-template" type="text/template">
             {{#each this}}
@@ -59,11 +64,12 @@
             <!--  -->
             <a id="applyBtn" class="apply-flex-item" style="cursor:pointer" value="{{id}}">
                 <div class="flex-item-header">
-                    <p> Apply</p>
                 </div>
                 <div class="flex-item-info">
+                    <p> Want to be added to this bill?</p>
                 </div>
                 <div class="flex-item-apply">
+                    <p> Click here to APPLY!</p>
                 </div>
             </a>
         </script>
