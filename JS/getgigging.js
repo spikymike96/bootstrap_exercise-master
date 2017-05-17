@@ -72,8 +72,7 @@ function submit() {
             //swal("Nice, there is " + filtered.length + " available event!");
             swal({
                 title: 'Nice!',
-                text: "There is " + filtered.length + " available event fitting your criteria!",
-                type: 'warning'
+                text: "There is " + filtered.length + " available event fitting your criteria!"
             })
         } else {
             swal("Unfortunatly there are currently no available events that fit your criteria... Please try again!");
