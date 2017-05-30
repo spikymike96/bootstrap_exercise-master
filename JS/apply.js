@@ -43,6 +43,7 @@ function submit() {
 
 
 
+
                 //events.push(childSnapshot.val());
             }
             //eventCreator == user.uid && events.push(childSnapshot.val());
@@ -71,9 +72,9 @@ function submit() {
     //     console.log(snap.val());
     // });
 
-    // dbRefObject.push({
-    //     id: user.uid
-    // });
+    dbRefObject.push({
+        id: user.uid
+    });
 
     // UserRefObject.push({
     //     id: eventId
